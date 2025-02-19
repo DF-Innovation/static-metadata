@@ -1,0 +1,10 @@
+# Selling Energy
+
+To buy or sell energy, you'll need to interact with the Singularity contract on the Solana blockchain. Here's a step-by-step guide:
+
+## Selling Energy
+
+1. **Provision your Metabolizer account**: Send energy to your Metabolizer account using the `provision` instruction. This will reserve the energy for future transactions.
+2. **Initialize a Transformer account**: Create a new Transformer account using the `transform` instruction. This will generate a unique address for your Transformer account.
+3. **Deposit energy into the Singularity account**: Use the `provision` instruction to send energy from your Metabolizer account to the Singularity account.
+4. **Withdraw energy profit**: Use the `withdraw` instruction to withdraw the energy profit from the Singularity account.

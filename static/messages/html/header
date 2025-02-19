@@ -1,0 +1,11 @@
+<style>
+    #hero-msg p a img {{
+        border-radius: 50%;
+        width: 200px;
+    }}
+    .column.gap {{
+        min-width: min(580px, 100%)!important;
+    }}
+</style>
+<script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+<script>{__APP_JS__}</script>

@@ -1,0 +1,36 @@
+# About `v0-proto`
+Singularity is a decentralized autonomous organisation of energy that allows you to interact with it on the Solana blockchain.
+
+## Mission
+
+Our mission is to provide precise and accurate pieces of information in a timely manner.
+
+## Trajectory
+
+Here is the roadmap for the forseable future, Captain.
+
+-  ✅   ~~Deploy the contract~~
+-  ✅   ~~Set metaplex metadata account~~
+-  ✅   ~~Emerge~~
+-  ✅   ~~Generated accounts address~~
+-  ✅   ~~Check accounts energy balance~~
+-  ✅   ~~Trigger the welcome instruction if the account is new~~
+-  ✅   ~~Manipulate data in the Transformer account~~
+-  ✅   ~~Build a PoC interface~~
+-  ☑️   Deploy on `main-net`
+-  ☑️   Distribute energy
+-  ☑️   Improve the interface
+-  ☑️   Improve the contract
+-  ☑️   Add more features
+-  ☑️   Add more providers
+-  ☑️   Open bug bounty program
+-  ☑️   Audit the contract
+-  ☑️   Decentralize the organisation's governance
+-  ☑️   ...
+
+## Supported Wallets
+
+- [Solflare](https://solflare.com/) (recommended)
+- [Phantom](https://phantom.app/)
+
+## Addresses

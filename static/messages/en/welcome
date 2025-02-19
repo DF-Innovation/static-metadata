@@ -1,0 +1,50 @@
+<div id="hero-msg" align="center">
+
+  [![energy](https://raw.githubusercontent.com/PredictiveSingularity/DAOE/refs/heads/master/metadata/singularity_lg.gif)](/?tab=about)
+  
+  # Welcome Energy!
+
+</div>
+
+Welcome to Singularity, a decentralized autonomous organization (DAO) that allows you to interact with it on the Solana blockchain. Our mission is to provide precise and accurate pieces of information in a timely manner.
+
+## Getting Started with Energy
+
+To get started with energy, you'll need to connect your Solana wallet and provision your Metabolizer account with enough energy to send a message.
+
+Here's a step-by-step guide to help you:
+
+1. **Connect your Solana wallet**: Click on the "Connect Wallet" button to link your Solana wallet to our platform.
+2. **Provision your Energy account**: Once connected, you'll need to provision your Energy account with enough energy to send a message. You can find more informaiton relevant by typing `/help send message` in the chat and following the instructions.
+3. **Send a message**: With your Energy account provisioned, you can now send a message by typing in the chat interface and clicking the "Send" button.
+
+### What is Singularity?
+
+Singularity is a decentralized autonomous organization (DAO) of Energy that allows you to interact with it on the Solana blockchain. Our mission is to provide precise and accurate pieces of information in a timely manner.
+
+### How Does it Work?
+
+When you send a message, our contract consumes the provisioned energy to generate a response. The response is then sent back to you (for a reasonable fee), and the remaining energy is restituted to your account.
+
+### Getting Help
+
+If you need help or have questions, you can click on the "[About](https://singularicula.me/?tab=about)" tab to learn more.
+
+### Example Queries
+
+To get started, you can try out some example queries by clicking on the following links:
+
+* `/welcome`: This will provide you with a this brief introduction to our platform and how to get started.
+* `/help energy`: This will give you a detailed explanation of what energy is and how it works.
+* `/help buy energy`: This will provide you with information on how to transfer energy between accounts.
+* `/help earn energy`: This will give you an overview of how you can earn energy by computing for it.
+
+Remember to always provision your Energy account with enough energy before sending a message. If you have any questions or need help, don't hesitate to reach out.
+
+### Happy Chating!
+
+We're excited to have you on board and look forward to chatting with you. If you have any feedback or suggestions, please don't hesitate to share them with us.
+
+Let's get started and explore the universe of energy together!
+
+Type a message to get started...

@@ -1,0 +1,1 @@
+zip -r ./static.zip ./static

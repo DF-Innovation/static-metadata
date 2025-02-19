@@ -1,2 +1,2 @@
-# static-metadata
-Static Metadata
+# Static Metadata
+Static metadata that should not change frequently.

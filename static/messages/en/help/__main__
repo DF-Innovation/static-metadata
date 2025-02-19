@@ -1,0 +1,15 @@
+# Help Center
+
+Get help about a topic by typing `/help <topic>` in the chat. Here are some topics you can get help with:
+
+-  `command`: Get help on how to use commands.
+    -   `/help explain`
+    -   `/help contact`
+-  `concept`: Get help on a concept.
+    -   `/help energy`
+    -   `/help buy energy`
+    -   `/help earn energy`
+    -   `/help sell energy`
+    -   `/help send message`
+
+If you still have questions, you can ask them in the chat using the _*@support*_ handle and our support agent will do its best to help you.

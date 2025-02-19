@@ -1,0 +1,23 @@
+<details>
+
+  <summary>A problem? Click here to find a solution.</summary>
+
+  ### Getting specific information
+
+  Type `/help send message` in the "[Converse](https://singularicula.me/?tab=chat)" tab to get more information on how to send a message.
+
+  Once you have energy and can send messages, you could type somthing like `/help energy earn` to get more information on how to earn energy.
+
+  If you still have questions, you can then ask them in the chat and the model you picked will do its best to help you.
+
+  ### Asking for help
+
+  If you still are having trouble, you can visit our [Dicussion Room](https://github.com/orgs/PredictiveSingularity/discussions). The [_Q&A_](https://github.com/orgs/PredictiveSingularity/discussions/categories/q-a) section is a great place to ask questions and get help as we'll pin most voted questions to the top.
+
+  ### Opening a ticket
+
+  If you still can't find a solution, checkout [currently open](https://github.com/PredictiveSingularity/Chat-Interface/issues) ([and closed](https://github.com/PredictiveSingularity/Chat-Interface/issues?q=is%3Aissue)) tickets, maybe it's a known issue and this would be the place to get more information about it.
+  
+  If you fail to find a ticket about your specific issue, you can [open a new one](https://github.com/PredictiveSingularity/Chat-Interface/issues).
+
+</details>
