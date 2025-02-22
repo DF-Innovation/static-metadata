@@ -1,0 +1,68 @@
+<hr><details>
+
+<summary>You are about to sign a contract a contract with energy. Click here to expand the details.</summary>
+
+### Terms and Conditions
+
+The following seahorse code snippet is the part of the contract that you are about to sign.
+
+#### Source Code
+
+We either initialize or update your Transformer account with our contract.
+
+
+##### Intialization
+```python
+   # Initialize a Transformer
+    @instruction
+    def transform(
+        signer: Signer,
+        mint: TokenMint,
+        transformer: Empty[Transformer],
+        transformer_account: Empty[TokenAccount],
+        pickle: str,
+    ):
+        transformer_account.init(
+            payer = signer,
+            seeds = ['1', mint, signer],
+            mint = mint,
+            authority = signer,
+        )
+        transformer = transformer.init(
+            payer = signer,
+            seeds = ['energy-transformer', signer]
+        )
+        transformer.owner = signer.key()
+        transformer.pickle = pickle
+        transformer.vec_unit_gen = 0
+```
+
+##### Update
+
+```python
+    # Update a Transformer
+    @instruction
+    def improve_transform(
+        transformer: Transformer,
+        pickle: str,
+        signer: Signer
+    ):
+    assert transformer.owner == signer.key(), 'You are not the owner of the Transformer account.'
+    transformer.pickle = pickle
+```
+
+This will store the pieces of information provided in the `pickle` of the Transformer account.
+
+This `pickle` is encrypted and can only be decrypted by us.
+
+Those pieces of information can later be used at any point in time to access the necessary computing resources to provide users with the pieces of information they seek.
+
+We recommend you use dedicated credentials for the purpose of this contract. We also recommend you rotate them regularly to ensure the security of your account.
+
+You may always revoke the access of the Transformer account to the provider:
+-   by closing the account,
+-   by providing it with empty values,
+-   or by simply revoking the credentials from your account with the provider.
+
+If you understand and agree to the terms and conditions, please click the `Confirm` button.
+</details>

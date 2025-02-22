@@ -1,0 +1,36 @@
+## Welcome to Singularity
+
+### Your Energy Companion
+
+To get started, please make sure you have the following:
+
+1. **Solana Wallet**: Install a Solana wallet extension, such as [Solflare](https://solflare.com) (recommended) or [Phantom](https://phantom.app).
+2. **SOL Account**: Create a SOL account (if you don't already have one) and ensure it has enough SOL to cover transaction fees.
+3. **Energy Account**: Your energy account will be derived from your SOL account public key. The first time you connect, you'll be prompted to sign a transaction to create it.
+4. **Energy Balance**: You'll need enough energy in your energy account to send messages. You can buy energy on the crypto-market or earn it by computing for us.
+
+Once you've met these requirements, you can write a message in the chat, and you'll be prompted to sign a transaction to provision the necessary energy. We'll then generate an answer using the chosen model and parameters, consume the tokens, and redistribute energy accordingly.
+
+The first time you send a message, we'll additionally ask you to sign a transaction to create your Metabolizer account. This account will hold your energy reserves and facilitate transactions with Singularity.
+
+### Tips and Reminders
+
+* Make sure you have enough SOL to cover transaction fees.
+* Keep your energy account balance topped up to avoid delays in sending messages.
+* You can earn energy by computing for us (type `/help earn energy` to know more) or buying it on the crypto-market (type `/help buy energy`).
+* Always review the transaction details carefully before signing.
+
+### Getting Started
+
+1. Connect your Solana wallet by clicking the "Connect Wallet" button.
+2. Create your energy account by signing the transaction prompt.
+3. Fund your energy account with enough energy to send messages.
+4. Write your message in the chat, and we'll guide you through the rest of the process.
+
+### Example Use Cases
+
+* Ask us a question, and we'll generate an answer using the desired language model.
+* Request a summary of a topic, and we'll provide a concise overview.
+* Even ask us to generate creative content, like a short story or poem!
+
+Remember, the more energy you have in your account, the more complex and detailed your requests can be. So, get started, and let's explore the possibilities of Singularity together!
