@@ -1,0 +1,36 @@
+# À propos de `v0-proto`
+Cette interface est une démonstration d'un système de paiement décentralisé qui vous permet d'interagir avec les modèles de langage sur la blockchain Solana.
+
+## Mission
+
+Notre mission est de fournir des informations précises et exactes en temps opportun.
+
+## Trajectoire
+
+Voici la feuille de route pour l'avenir prévisible, capitaine.
+
+- ✅ ~~Déployer le contrat~~
+- ✅ ~~Définir le compte de métadonnées metaplex~~
+- ✅ ~~Émerger~~
+- ✅ ~~Adresse des comptes générés~~
+- ✅ ~~Vérifier le solde énergétique des comptes~~
+- ✅ ~~Déclencher l'instruction de bienvenue si le compte est nouveau~~
+- ✅ ~~Manipuler les données dans le compte Transformer~~
+- ✅ ~~Créer une interface PoC~~
+- ☑️ Déployer sur `main-net`
+- ☑️ Distribuer l'énergie
+- ☑️ Améliorer l'interface
+- ☑️ Améliorer le contrat
+- ☑️ Ajouter plus de fonctionnalités
+- ☑️ Ajouter plus de fournisseurs
+- ☑️ Ouvrir le programme de chasse aux bugs
+- ☑️ Auditer le contrat
+- ☑️ Décentraliser le gouvernance de l'organisation
+- ☑️ ...
+
+## Portefeuilles pris en charge
+
+- [Solflare](https://solflare.com/) (recommandé)
+- [Phantom](https://phantom.app/)
+
+## Adresses
