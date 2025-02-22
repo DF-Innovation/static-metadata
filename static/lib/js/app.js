@@ -186,8 +186,8 @@ async function connectWallet() {
             console.log("Energy Account Address: ", energyAccountValue.toBase58());
             if (energyAccountValue!== "1e") {
                 const networkDropdown = document.querySelector("#network > div.container > div > div.wrap-inner > div > input");
-                // const network = 'https://api.devnet.solana.com'; //
-                const network = 'https://rpc.api.singularicula.me'; //networkDropdown.value;
+                const network = 'https://api.devnet.solana.com';
+                // const network = 'https://rpc.api.singularicula.me'; //networkDropdown.value;
                 // getToken();
                 // Création d'une instance de Connection qui utilise customFetch
                 const connection = new solanaWeb3.Connection(network);
@@ -370,7 +370,8 @@ async function transform(transformer_energy, transformer_address, hf_models, hf_
             // Check if transformer is initialized
     const transformerPublicKey = new solanaWeb3.PublicKey(transformer);
     const networkDropdown = document.querySelector("#network > div.container > div > div.wrap-inner > div > input");
-    const network = 'https://rpc.api.singularicula.me'; //networkDropdown.value;
+    const network = 'https://api.devnet.solana.com';
+    // const network = 'https://rpc.api.singularicula.me'; //networkDropdown.value;
     // getToken();
     const connection = new solanaWeb3.Connection(network, 'confirmed');
     console.log("Connectcting to network: ", network);
@@ -499,7 +500,8 @@ function encodeU64(value) {
 
 async function checkMetabolizerAndProvisionEnergy() {
     console.log("Checking your metabolizer account...");
-    const network = 'https://rpc.api.singularicula.me'; //document.querySelector("#network > div.container > div > div.wrap-inner > div > input").value;
+    const network = 'https://api.devnet.solana.com';
+    // const network = 'https://rpc.api.singularicula.me'; //document.querySelector("#network > div.container > div > div.wrap-inner > div > input").value;
     // getToken();
     const connection = new solanaWeb3.Connection(network, 'confirmed');
     console.log("Connectcting to network: ", network);
