@@ -363,6 +363,7 @@ async function disconnectWallet() {
 async function transform(transformer_energy, transformer_address, hf_models, hf_key, openai_models, openai_key, passphrase, pickle, pickle_data) {
     // const pckl = document.querySelector("#transformer-pickle > label > div.input-container > textarea").value;
     const transformer = document.querySelector("#transformer-address > label > div > textarea").value;
+    console.log("Supplier Address: ", transformer);
     // if (pckl) {
     //     if (pckl === '789c6b60a99da20700056201c4') {
     //         console.log("Pickle is empty.");
@@ -380,8 +381,9 @@ async function transform(transformer_energy, transformer_address, hf_models, hf_
     const systemProgramId = solanaWeb3.SystemProgram.programId;
     const rentSysvarId = solanaWeb3.SYSVAR_RENT_PUBKEY;
     const programId = new solanaWeb3.PublicKey(document.querySelector("#contract-address > label > div > textarea").value);
-    const energyMint = document.querySelector("#energy-mint > label > div > textarea").value;
-    const mint = new solanaWeb3.PublicKey(energyMint);
+    console.log("Program ID: ", programId.toBase58());
+    // const energyMint = document.querySelector("#energy-mint > label > div > textarea").value;
+    // const mint = new solanaWeb3.PublicKey(energyMint);
     // Convertir la chaîne pckl en octets
     // const encoder = new TextEncoder();
     // const pcklBytes = encoder.encode(pckl);
@@ -394,21 +396,22 @@ async function transform(transformer_energy, transformer_address, hf_models, hf_
             console.log("Connecting to wallet...");
             const resp = await provider.connect();
             const publicKey = resp.publicKey  || provider.publicKey;
+            console.log("Public Key: ", publicKey.toBase58());
             const transaction = new solanaWeb3.Transaction({
                 feePayer: publicKey,
             });
             if (!accountInfo || !accountInfo.value) {
-                // initialize the transformer
-                console.log("Opening your transformer account...");
+                // initialize the supplier
+                console.log("Opening your supplier account...");
                 const accounts = [
                     { pubkey: publicKey, isSigner: true, isWritable: true },
-                    { pubkey: mint, isSigner: false, isWritable: true },
+                    // { pubkey: mint, isSigner: false, isWritable: true },
                     { pubkey: transformerPublicKey, isSigner: false, isWritable: true },
                     { pubkey: rentSysvarId, isSigner: false, isWritable: false },
                     { pubkey: systemProgramId, isSigner: false, isWritable: false },
                 ];
                 // Compute the 8-byte discriminator for "transform"
-                const transformDiscriminator = await computeInstructionDiscriminator("transform");
+                const transformDiscriminator = await computeInstructionDiscriminator("supply");
                 console.log("8-byte instruction discriminator:", transformDiscriminator);
                 // const transformData = new Uint8Array(2);
                 // // Encoder les données dans le tableau d'octets
@@ -526,15 +529,15 @@ async function checkMetabolizerAndProvisionEnergy() {
                 accountChecked = false;
                 if (!accountInfo || !accountInfo.value) {
                     // initialize the metabolizer
-                    console.log("Opening your metabolizer account...");
+                    console.log("Opening your demander account...");
                     const accounts = [
                         { pubkey: publicKey, isSigner: true, isWritable: true },
                         { pubkey: metabolizerPublicKey, isSigner: false, isWritable: true },
                         { pubkey: rentSysvarId, isSigner: false, isWritable: false },
                         { pubkey: systemProgramId, isSigner: false, isWritable: false },
                     ];
-                    // Compute the 8-byte discriminator for "metabolize"
-                    const metabolizeDiscriminator = await computeInstructionDiscriminator("metabolize");
+                    // Compute the 8-byte discriminator for "demand"
+                    const metabolizeDiscriminator = await computeInstructionDiscriminator("demand");
                     console.log("8-byte instruction discriminator:", metabolizeDiscriminator);
                     metabolizeData = metabolizeDiscriminator;
                     instruction = new solanaWeb3.TransactionInstruction({
