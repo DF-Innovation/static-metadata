@@ -1,0 +1,5 @@
+Token not consumed!
+e=TypeError("'solders.rpc.responses.RpcBlockhash' object is not subscriptable"):
+taddress='96dv1M383HWufrhhsK1bsVJGx2zhUkBS5W3xZR7QABQr'
+eaddress='Eqw35gW4ZtxCDG4MtDQXQ83teWbcdUJotZJJyGsfmGWQ'
+vu=110
