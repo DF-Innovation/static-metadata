@@ -509,6 +509,7 @@ async function checkMetabolizerAndProvisionEnergy() {
     const connection = new solanaWeb3.Connection(network, 'confirmed');
     console.log("Connectcting to network: ", network);
     const metabolizer_address = document.querySelector("#metabolizer-address > label > div.input-container > textarea").value;
+    console.log("Demander Address: ", metabolizer_address);
     const metabolizerPublicKey = new solanaWeb3.PublicKey(metabolizer_address);
     await connection.getParsedAccountInfo(metabolizerPublicKey).then(async (accountInfo) => {
         console.log("Got metabolizer info.");
