@@ -588,12 +588,12 @@ async function checkMetabolizerAndProvisionEnergy() {
                     const tx = new solanaWeb3.Transaction({
                         feePayer: publicKey,
                     });
-                    const energy_addres = document.querySelector("#energy-address > label > div > textarea").value;
-                    const metabolizerEnergyAccountPublicKey = new solanaWeb3.PublicKey(energy_addres);
-                    const singularity_energy_addres = document.querySelector("#singularity-address > label > div > textarea").value;
-                    const singularityEnergyAccountPublicKey = new solanaWeb3.PublicKey(singularity_energy_addres);
-                    const n_provisoin = document.querySelector("div > div.wrap > div.head > div > input").value;
-                    if (!n_provisoin) {
+                    const energy_address = document.querySelector("#energy-address > label > div > textarea").value;
+                    const metabolizerEnergyAccountPublicKey = new solanaWeb3.PublicKey(energy_address);
+                    const singularity_energy_address = document.querySelector("#singularity-address > label > div > textarea").value;
+                    const singularityEnergyAccountPublicKey = new solanaWeb3.PublicKey(singularity_energy_address);
+                    const n_provisoin = document.querySelector("div#context-window > div.wrap > div.head > div > input").value;
+                    if (!n_provisoin || n_provisoin === 0) {
                         console.error("Please enter the amount of energy to provision.");
                         return;
                     }
@@ -604,6 +604,7 @@ async function checkMetabolizerAndProvisionEnergy() {
                             // initialize the metabolizer energy account
                             console.error("Metabolizer energy account doesn't exist.");
                         } else {
+                            console.log(meaccountInfo.value);
                             await connection.getParsedAccountInfo(singularityEnergyAccountPublicKey).then(async (seaccountInfo) => {
                                 console.log("Got singularity energy account info.");
                                 if (!seaccountInfo || !seaccountInfo.value) {
@@ -621,8 +622,9 @@ async function checkMetabolizerAndProvisionEnergy() {
                                     // Compute the 8-byte discriminator for "provision"
                                     const provisionEnergyDiscriminator = await computeInstructionDiscriminator("provision");
                                     console.log("8-byte instruction discriminator:", provisionEnergyDiscriminator);
-                                    // param: n : u64
+                                    // param: n : u64 
                                     const nU64 = encodeU64(n_provisoin * 1e6);
+                                    console.log("nU64: ", nU64);
                                     provisionEnergyData = new Uint8Array([...provisionEnergyDiscriminator, ...nU64]);
                                     instruction = new solanaWeb3.TransactionInstruction({
                                         keys: accounts,
@@ -697,9 +699,9 @@ function sendMessage() {
             return;
         } else {
             console.log("Message: ", message);
-            const energy_addres = document.querySelector("#energy-address > label > div > textarea").value;
-            if (energy_addres) {
-                if (energy_addres === '1e') {
+            const energy_address = document.querySelector("#energy-address > label > div > textarea").value;
+            if (energy_address) {
+                if (energy_address === '1e') {
                     // alert("Please connect your wallet to send messages.");
                     console.error('Please connect your wallet to send messages.')
                 } else {
@@ -716,27 +718,113 @@ function sendMessage() {
     }, 1000);
 }
 
-// async function sendTransaction(recipient, amount) {
-//     if ('solana' in window) {
-//         const provider = window.solana;
-//         if (provider.isPhantom) {
-//             try {
-                    // getToken();
-//                 const connection = new solanaWeb3.Connection(solanaWeb3.clusterApiUrl('mainnet-beta'));
-//                 const fromPubkey = provider.publicKey;
-//                 const toPubkey = new solanaWeb3.PublicKey(recipient);
-//                 const transaction = new solanaWeb3.Transaction().add(
-//                     solanaWeb3.SystemProgram.transfer({
-//                         fromPubkey,
-//                         toPubkey,
-//                         lamports: amount * 1e9,
-//                     })
-//                 );
-//                 const { signature } = await provider.signAndSendTransaction(transaction);
-//                 alert('Transaction sent with signature: ' + signature);
-//             } catch (err) {
-//                 console.error(err);
-//             }
-//         }
-//     }
-// }
+
+async function transfer(recipient, amount) {
+    provider = getProvider();
+    if (provider) {
+        console.log("Found provider.");
+        try {
+            console.log("Connecting to wallet...");
+            const resp = await provider.connect();
+            const publicKey = resp.publicKey || provider.publicKey;
+            const toPubkey = new solanaWeb3.PublicKey(recipient);
+            
+            // Get the network from the UI
+            cluster = document.querySelector("#network > div.container > div > div.wrap-inner > div > input").value;
+            const network = solanaWeb3.clusterApiUrl(cluster);
+            const connection = new solanaWeb3.Connection(network, 'confirmed');
+            console.log("Connecting to network: ", network);
+            
+            // Create a new transaction
+            const transaction = new solanaWeb3.Transaction({
+                feePayer: publicKey,
+            });
+            
+            // Create transfer instruction manually
+            // Create instruction data manually: 2 is the index for transfer, followed by the lamports amount
+            const dataLayout = {
+                index: 2, // transfer instruction index
+                amount: BigInt(amount * 1e9) // Convert SOL to lamports
+            };
+            
+            // Serialize the instruction data - 12 bytes: 4 for index + 8 for amount (as u64)
+            const data = new Uint8Array(12);
+            const view = new DataView(data.buffer);
+            view.setUint32(0, dataLayout.index, true); // 4 bytes for index, little-endian
+            view.setBigUint64(4, dataLayout.amount, true); // 8 bytes for amount, little-endian
+            
+            const keys = [
+                { pubkey: publicKey, isSigner: true, isWritable: true },  // from
+                { pubkey: toPubkey, isSigner: false, isWritable: true },  // to
+            ];
+            
+            const transferInstruction = new solanaWeb3.TransactionInstruction({
+                keys: keys,
+                programId: solanaWeb3.SystemProgram.programId,
+                data: data,
+            });
+            
+            transaction.add(transferInstruction);
+            
+            // Get latest blockhash
+            const latest = await connection.getLatestBlockhash();
+            console.log("Latest blockhash: ", latest);
+            transaction.recentBlockhash = latest.blockhash;
+            transaction.lastValidBlockHeight = latest.lastValidBlockHeight;
+            
+            console.log("Transaction: ", transaction);
+            
+            // Sign and send the transaction
+            const signature = await provider.signAndSendTransaction(transaction);
+            console.log('Transfer: Transaction sent with signature: ', JSON.stringify(signature));
+            return signature;
+        } catch (err) {
+            console.error("Transfer error:", err);
+            if (err.logs) {
+                console.error("Error logs:", err.logs);
+            }
+        }
+    }
+}
+
+
+async function purchase(amountGPT, amountSOL, customerAddress, gptAddress) {
+    
+    // alert(customerAddress + " wants to purchase " + amountGPT + " GPT for " + amountSOL + " SOL on " + networkCluster);
+    console.log("SOL Address: ", customerAddress);
+    console.log("GPT Address: ", gptAddress);
+    console.log("Amount GPT: ", amountGPT);
+    console.log("Amount SOL: ", amountSOL);
+    if (!customerAddress || customerAddress === '0x') {
+        alert("Please connect your wallet to purchase GPT.");
+        console.error("Invalid customer address.");
+        return [amountGPT, amountSOL, customerAddress, gptAddress];
+    }
+    // customer sends SOL to the contract address
+    // vaultAccount = 
+    // return new Promise((resolve, reject) => {
+    //     const connection = new solanaWeb3.Connection(solanaWeb3.clusterApiUrl('devnet'));
+    //     const fromPubkey = customerAddress;
+    //     const toPubkey = vaultAccount;
+    //     const transaction = new solanaWeb3.Transaction().add(
+    //         solanaWeb3.SystemProgram.transfer({
+    //             fromPubkey,
+    //             toPubkey,
+    //             lamports: amountSOL * 1e9,
+    //         })
+    //     );
+    //     const { signature } = provider.signAndSendTransaction(transaction);
+    //     console.log('Transaction sent with signature: ' + signature);
+    //     resolve(signature);
+    // }
+    // );
+    solIcoAddress = document.querySelector("#sol-ico-address > label > div > textarea").value;
+    console.log("SOL ICO Address: ", solIcoAddress);
+    const trxSigID = await transfer(solIcoAddress, amountSOL);
+    // set the transaction-signature field value with trxSigID
+    const trxSigField = document.querySelector("#transaction-signature > label > div > textarea");
+    trxSigField.value = trxSigID['signature'];
+    trxSigField.dispatchEvent(new Event('input'));
+    return [amountGPT, amountSOL, customerAddress, gptAddress];
+}
+

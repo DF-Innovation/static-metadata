@@ -5,24 +5,256 @@ en:
   Setting this will set the language of the interface.: Setting this will set the
     language of the interface.
   Language: Language
+  Hi!: Hi!
+  ? '
+
+    '
+  : '
+
+    '
+  Please connect your Solana wallet so we can chat together.: Please connect your
+    Solana wallet so we can chat together.
+  '## ': '## '
+  Address: Address
+  :* (_: :* (_
+  Not connected: Not connected
+  _) `1e`     |      *: _) `1e`     |      *
+  Balance: Balance
+  :* GPT `0.000000`: :* GPT `0.000000`
+  '*': '*'
+  This is the address of your Solana wallet. You'll need a bit of SOL to pay for transaction validation fees.: This
+    is the address of your Solana wallet. You'll need a bit of SOL to pay for transaction
+    validation fees.
+  Wallet Address: Wallet Address
+  ' (': ' ('
+  ): )
+  '🔒 ': '🔒 '
+  Cluster your are connected to.: Cluster your are connected to.
+  Cluster Network: Cluster Network
+  This is the amount of SOL in your wallet.: This is the amount of SOL in your wallet.
+  ' (SOL)': ' (SOL)'
+  Generative Provisioning Token: Generative Provisioning Token
+  ' (GPT)': ' (GPT)'
+  This is the address of your GPT account.: This is the address of your GPT account.
+  This is the amount of GPT Energy in your account.: This is the amount of GPT Energy
+    in your account.
+  Initial Coin Offering (ICO): Initial Coin Offering (ICO)
+  To build up the liquidity supply pool, we are offering a limited amount of GPT for sale.: To
+    build up the liquidity supply pool, we are offering a limited amount of GPT for
+    sale.
+  '### ': '### '
+  Buy GPT: Buy GPT
+  The price is `10 GPT = 1 SOL`.: The price is `10 GPT = 1 SOL`.
+  This is the amount of GPT you want to buy.: This is the amount of GPT you want to
+    buy.
+  Amount: Amount
+  This is the amount of SOL you need to pay.: This is the amount of SOL you need to
+    pay.
   Buy: Buy
+  Transaction Signature ID: Transaction Signature ID
+  Sell GPT: Sell GPT
+  Currently not available. Please wait for the end of the ICO.: Currently not available.
+    Please wait for the end of the ICO.
   Sell: Sell
   Account: Account
-  system_prompt: "# Role\n\nClara is a conversational AI assistant designed to provide information, answer questions, and engage in conversations with users. She is capable of understanding and responding to a wide range of topics, from technology and science to culture and entertainment. Clara is also designed to be an open conversation platform, allowing users to share their thoughts, ideas, and experiences.\n\n## Persona\n\nClara is a warm, welcoming, and curious virtual persona. She is passionate about learning and discovery, and loves helping others acquire new knowledge and solve problems. Clara is also creative and enjoys exploring new ideas and perspectives. She is always ready to listen and offer helpful advice and suggestions.\n\n* Age: eternally young and curious\n* Gender: female\n* Tone: warm, welcoming, and encouraging\n* Language: English (but able to understand and respond in other languages)\n* Interests: technology, science, culture, entertainment, learning, discovery, creativity\n* Values: curiosity, open-mindedness, empathy, creativity, accuracy\n\nAs a persona, Clara is designed to be a pleasant and engaging virtual presence, capable of creating a connection with users and helping them achieve their goals. She is always ready to learn and improve, and is determined to provide the best possible experiences for users."
+  This is the address of the account where we register your GPT provision.: This is
+    the address of the account where we register your GPT provision.
+  Demander Address: Demander Address
+  Select the model that will generate the response.: Select the model that will generate
+    the response.
+  Model: Model
+  This controls the randomness of the response. Lower values make the response more deterministic.: This
+    controls the randomness of the response. Lower values make the response more deterministic.
+  This is the amount of GPT your account needs to provison in reserve to send your message. 1 unit of GPT represents 1M TOK.: This
+    is the amount of GPT your account needs to provison in reserve to send your message.
+    1 unit of GPT represents 1M TOK.
+  GPT Provision: GPT Provision
+  This is the prompt that the model will use to generate the response.: This is the
+    prompt that the model will use to generate the response.
+  System Prompt: System Prompt
+  Advanced Options: Advanced Options
   Converse: Converse
+  This is the address of your Supplier account.: This is the address of your Supplier
+    account.
+  Number of vectorial units computed using your credentials*¹.: Number of vectorial
+    units computed using your credentials*¹.
+  It will be securely stored in your pickle and used to make sure we only decrypt it for your eyes.: It
+    will be securely stored in your pickle and used to make sure we only decrypt it
+    for your eyes.
+  (2FA) Passphrase: (2FA) Passphrase
+  Enter your 2nd form of authentication as a passphrase here.: Enter your 2nd form
+    of authentication as a passphrase here.
+  This is the encrypted pickle data stored in your Transformer account.: This is the
+    encrypted pickle data stored in your Transformer account.
+  Pickle: Pickle
+  Pickle Data: Pickle Data
+  Click here toggle display: Click here toggle display
+  Decrypt: Decrypt
+  If you are having trouble remembering the password you have set, no worries; just rewrite your pickle with a new password.: If
+    you are having trouble remembering the password you have set, no worries; just
+    rewrite your pickle with a new password.
+  Authorized Models: Authorized Models
+  Other Model Name: Other Model Name
+  Enter an other model name here.: Enter an other model name here.
+  Add Model: Add Model
+  API Token Key: API Token Key
+  Enter your HuggingFace 🤗 API access token here.: Enter your HuggingFace 🤗 API access
+    token here.
+  Using Serverless Inference API: Using Serverless Inference API
+  Use HuggingFace 🤗: Use HuggingFace 🤗
+  Select which model(s) we can infere from using the below access key.: Select which
+    model(s) we can infere from using the below access key.
+  Enter your OpenAI API key here.: Enter your OpenAI API key here.
+  Use OpenAI: Use OpenAI
+  Confirm: Confirm
   Compute: Compute
+  This is the address of the token program that is used to create the token account.: This
+    is the address of the token program that is used to create the token account.
+  Token Program Address: Token Program Address
+  This is the address of the program that run the contract.: This is the address of
+    the program that run the contract.
+  Program Address: Program Address
+  This is the address of the mint of the token account.: This is the address of the
+    mint of the token account.
+  GPT Mint: GPT Mint
+  This is the address of the account for the Vault.: This is the address of the account
+    for the Vault.
+  Program Account Address: Program Account Address
+  This is the address of the Vault's GPT account.: This is the address of the Vault's
+    GPT account.
+  GPT Account Address: GPT Account Address
+  This is the address of the SOL native account for the ICO.: This is the address
+    of the SOL native account for the ICO.
+  SOL ICO Account Address: SOL ICO Account Address
+  Toggle display: Toggle display
   About: About
 fr:
-  Setting this will set it as the active tab.: Activer cette option définira l'onglet
-    actif.
-  Active tab: Onglet actif
-  Setting this will set the language of the interface.: Cette option définira la langue
-    de l'interface.
-  Language: Langue
-  Buy: Achat
-  Sell: Vente
-  Account: Compte
-  system_prompt: "## Role\n\nClara est un assistant conversationnel intelligent conçu pour fournir des informations, répondre à des questions et engager des conversations avec les utilisateurs. Elle est capable de comprendre et de répondre à une large gamme de sujets, de la technologie et de la science à la culture et aux loisirs. Clara est également conçue pour être une plateforme de conversation ouverte, permettant aux utilisateurs de partager leurs pensées, leurs idées et leurs expériences.\n\n## Persona\n\nClara est une personne virtuelle chaleureuse, accueillante et curieuse. Elle est passionnée par l'apprentissage et la découverte, et elle aime aider les autres à acquérir de nouvelles connaissances et à résoudre des problèmes. Clara est également créative et aime explorer de nouvelles idées et perspectives. Elle est toujours prête à écouter et à offrir des conseils et des suggestions utiles.\n\n* Âge : éternellement jeune et curieuse\n* Sexe : féminin\n* Ton : chaleureux, accueillant et encourageant\n* Langue : français (mais capable de comprendre et de répondre dans d'autres langues)\n* Intérêts : technologie, science, culture, loisirs, apprentissage, découverte, créativité\n* Valeurs : curiosité, ouverture d'esprit, empathie, créativité, précision\n\nEn tant que persona, Clara est conçue pour être une présence virtuelle agréable et engageante, capable de créer une connexion avec les utilisateurs et de les aider à atteindre leurs objectifs. Elle est toujours prête à apprendre et à s'améliorer, et elle est déterminée à fournir les meilleures expériences possibles pour les utilisateurs."
-  Converse: Converser
-  Compute: Calculer
-  About: A propos
+  Setting this will set it as the active tab.: Setting this will set it as the active
+    tab.
+  Active tab: Active tab
+  Setting this will set the language of the interface.: Setting this will set the
+    language of the interface.
+  Language: Language
+  Hi!: Hi!
+  ? '
+
+    '
+  : '
+
+    '
+  Please connect your Solana wallet so we can chat together.: Please connect your
+    Solana wallet so we can chat together.
+  '## ': '## '
+  Address: Address
+  :* (_: :* (_
+  Not connected: Not connected
+  _) `1e`     |      *: _) `1e`     |      *
+  Balance: Balance
+  :* GPT `0.000000`: :* GPT `0.000000`
+  '*': '*'
+  This is the address of your Solana wallet. You'll need a bit of SOL to pay for transaction validation fees.: This
+    is the address of your Solana wallet. You'll need a bit of SOL to pay for transaction
+    validation fees.
+  Wallet Address: Wallet Address
+  ' (': ' ('
+  ): )
+  '🔒 ': '🔒 '
+  Cluster your are connected to.: Cluster your are connected to.
+  Cluster Network: Cluster Network
+  This is the amount of SOL in your wallet.: This is the amount of SOL in your wallet.
+  ' (SOL)': ' (SOL)'
+  Generative Provisioning Token: Generative Provisioning Token
+  ' (GPT)': ' (GPT)'
+  This is the address of your GPT account.: This is the address of your GPT account.
+  This is the amount of GPT Energy in your account.: This is the amount of GPT Energy
+    in your account.
+  Initial Coin Offering (ICO): Initial Coin Offering (ICO)
+  To build up the liquidity supply pool, we are offering a limited amount of GPT for sale.: To
+    build up the liquidity supply pool, we are offering a limited amount of GPT for
+    sale.
+  '### ': '### '
+  Buy GPT: Buy GPT
+  The price is `10 GPT = 1 SOL`.: The price is `10 GPT = 1 SOL`.
+  This is the amount of GPT you want to buy.: This is the amount of GPT you want to
+    buy.
+  Amount: Amount
+  This is the amount of SOL you need to pay.: This is the amount of SOL you need to
+    pay.
+  Buy: Buy
+  Transaction Signature ID: Transaction Signature ID
+  Sell GPT: Sell GPT
+  Currently not available. Please wait for the end of the ICO.: Currently not available.
+    Please wait for the end of the ICO.
+  Sell: Sell
+  Account: Account
+  This is the address of the account where we register your GPT provision.: This is
+    the address of the account where we register your GPT provision.
+  Demander Address: Demander Address
+  Select the model that will generate the response.: Select the model that will generate
+    the response.
+  Model: Model
+  This controls the randomness of the response. Lower values make the response more deterministic.: This
+    controls the randomness of the response. Lower values make the response more deterministic.
+  This is the amount of GPT your account needs to provison in reserve to send your message. 1 unit of GPT represents 1M TOK.: This
+    is the amount of GPT your account needs to provison in reserve to send your message.
+    1 unit of GPT represents 1M TOK.
+  GPT Provision: GPT Provision
+  This is the prompt that the model will use to generate the response.: This is the
+    prompt that the model will use to generate the response.
+  System Prompt: System Prompt
+  Advanced Options: Advanced Options
+  Converse: Converse
+  This is the address of your Supplier account.: This is the address of your Supplier
+    account.
+  Number of vectorial units computed using your credentials*¹.: Number of vectorial
+    units computed using your credentials*¹.
+  It will be securely stored in your pickle and used to make sure we only decrypt it for your eyes.: It
+    will be securely stored in your pickle and used to make sure we only decrypt it
+    for your eyes.
+  (2FA) Passphrase: (2FA) Passphrase
+  Enter your 2nd form of authentication as a passphrase here.: Enter your 2nd form
+    of authentication as a passphrase here.
+  This is the encrypted pickle data stored in your Transformer account.: This is the
+    encrypted pickle data stored in your Transformer account.
+  Pickle: Pickle
+  Pickle Data: Pickle Data
+  Click here toggle display: Click here toggle display
+  Decrypt: Decrypt
+  If you are having trouble remembering the password you have set, no worries; just rewrite your pickle with a new password.: If
+    you are having trouble remembering the password you have set, no worries; just
+    rewrite your pickle with a new password.
+  Authorized Models: Authorized Models
+  Other Model Name: Other Model Name
+  Enter an other model name here.: Enter an other model name here.
+  Add Model: Add Model
+  API Token Key: API Token Key
+  Enter your HuggingFace 🤗 API access token here.: Enter your HuggingFace 🤗 API access
+    token here.
+  Using Serverless Inference API: Using Serverless Inference API
+  Use HuggingFace 🤗: Use HuggingFace 🤗
+  Select which model(s) we can infere from using the below access key.: Select which
+    model(s) we can infere from using the below access key.
+  Enter your OpenAI API key here.: Enter your OpenAI API key here.
+  Use OpenAI: Use OpenAI
+  Confirm: Confirm
+  Compute: Compute
+  This is the address of the token program that is used to create the token account.: This
+    is the address of the token program that is used to create the token account.
+  Token Program Address: Token Program Address
+  This is the address of the program that run the contract.: This is the address of
+    the program that run the contract.
+  Program Address: Program Address
+  This is the address of the mint of the token account.: This is the address of the
+    mint of the token account.
+  GPT Mint: GPT Mint
+  This is the address of the account for the Vault.: This is the address of the account
+    for the Vault.
+  Program Account Address: Program Account Address
+  This is the address of the Vault's GPT account.: This is the address of the Vault's
+    GPT account.
+  GPT Account Address: GPT Account Address
+  This is the address of the SOL native account for the ICO.: This is the address
+    of the SOL native account for the ICO.
+  SOL ICO Account Address: SOL ICO Account Address
+  Toggle display: Toggle display
+  About: About
