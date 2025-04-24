@@ -412,6 +412,15 @@ en:
   SOL ICO Account Address: SOL ICO Account Address
   Toggle display: Toggle display
   About: About
+  Please conntect your wallet first.: Please conntect your wallet first.
+  ? 'Transaction aborted: Amount of GPT or SOL is negative.'
+  : 'Transaction aborted: Amount of GPT or SOL is negative.'
+  ? 'Transaction aborted: No transaction ID provided.'
+  : 'Transaction aborted: No transaction ID provided.'
+  ? 'Transaction successful! Thank you for your purchase.'
+  : 'Transaction successful! Thank you for your purchase.'
+  Purchasing: Purchasing
+  for: for
 fr:
   Setting this will set it as the active tab.: Définir cet onglet comme actif.
   Active tab: Onglet actif
@@ -829,3 +838,12 @@ fr:
   SOL ICO Account Address: Adresse du compte ICO SOL
   Toggle display: Afficher/masquer
   About: À propos
+  Please conntect your wallet first.: Veuillez d'abord connecter votre wallet.
+  ? 'Transaction aborted: Amount of GPT or SOL is negative.'
+  : 'Transaction annulée : Montant de GPT ou SOL négatif.'
+  ? 'Transaction aborted: No transaction ID provided.'
+  : 'Transaction annulée : Aucun ID de transaction fourni.'
+  ? 'Transaction successful! Thank you for your purchase.'
+  : 'Transaction réussie ! Merci pour votre achat.'
+  Purchasing: Achat de 
+  for: pour

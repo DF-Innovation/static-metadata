@@ -818,7 +818,7 @@ async function purchase(amountGPT, amountSOL, customerAddress, gptAddress) {
     console.log("Amount GPT: ", amountGPT);
     console.log("Amount SOL: ", amountSOL);
     if (!customerAddress || customerAddress === '0x') {
-        alert("Please connect your wallet to purchase GPT.");
+        // alert("Please connect your wallet to purchase GPT.");
         console.error("Invalid customer address.");
         return [amountGPT, amountSOL, customerAddress, gptAddress];
     }

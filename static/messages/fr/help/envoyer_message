@@ -1,30 +1,28 @@
-## Bienvenue dans la Singularité
+## Bienvenue
 
-### Votre compagnon énergétique
+Je suis Clara, pour commencer, assurez-vous de disposer des éléments suivants :
 
-Pour commencer, assurez-vous de disposer des éléments suivants :
+1. **Wallet Solana** : installez une extension de portefeuille Solana, telle que [Solflare](https://solflare.com) (recommandé) ou [Phantom](https://phantom.app).
+2. **Compte SOL** : créez un compte SOL (si vous n'en avez pas déjà un) et assurez-vous qu'il dispose de suffisamment de SOL pour couvrir les frais de transaction.
+3. **Compte de provision** : votre compte de provision sera dérivé de la clé publique de votre compte SOL. La première fois que vous vous connecterez, vous serez invité à signer une transaction pour la créer.
+4. **GPT** : vous aurez besoin de suffisamment du GPT dans votre compte de provision pour envoyer des messages. Vous pouvez acheter du GPT sur le marché des crypto-monnaies ou la gagner en calculant pour nous.
 
-1. **Solana Wallet** : installez une extension de portefeuille Solana, telle que [Solflare](https://solflare.com) (recommandé) ou [Phantom](https://phantom.app).
-2. **SOL Account** : créez un compte SOL (si vous n'en avez pas déjà un) et assurez-vous qu'il dispose de suffisamment de SOL pour couvrir les frais de transaction.
-3. **Energy Account** : votre compte énergétique sera dérivé de la clé publique de votre compte SOL. La première fois que vous vous connecterez, vous serez invité à signer une transaction pour la créer.
-4. **Energy Balance** : vous aurez besoin de suffisamment d'énergie dans votre compte énergétique pour envoyer des messages. Vous pouvez acheter de l'énergie sur le marché des crypto-monnaies ou la gagner en calculant pour nous.
+Une fois que vous avez rempli ces conditions, vous pouvez écrire un message dans le chat et vous serez invité à signer une transaction pour fournir la provision nécessaire. Nous générerons ensuite une réponse en utilisant le modèle et les paramètres choisis, consommerons les jetons et redistribuerons le GPT en conséquence.
 
-Une fois que vous avez rempli ces conditions, vous pouvez écrire un message dans le chat et vous serez invité à signer une transaction pour fournir l'énergie nécessaire. Nous générerons ensuite une réponse en utilisant le modèle et les paramètres choisis, consommerons les jetons et redistribuerons l'énergie en conséquence.
-
-La première fois que vous envoyez un message, nous vous demanderons également de signer une transaction pour créer votre compte Metabolizer. Ce compte contiendra vos réserves d'énergie et facilitera les transactions avec Singularity.
+La première fois que vous envoyez un message, nous vous demanderons également de signer une transaction pour créer votre compte demandeur. Ce compte contiendra vos réserves de GPT et facilitera les transactions avec Clara.
 
 ### Conseils et rappels
 
 * Assurez-vous d'avoir suffisamment de SOL pour couvrir les frais de transaction.
-* Gardez le solde de votre compte d'énergie rechargé pour éviter les retards dans l'envoi des messages.
-* Vous pouvez gagner de l'énergie en calculant pour nous (tapez `/help earn energy` pour en savoir plus) ou en l'achetant sur le marché des crypto-monnaies (tapez `/help buy energy`).
+* Gardez le solde de votre compte de provision rechargé en GPT pour éviter les retards dans l'envoi des messages.
+* Vous pouvez gagner du GPT en calculant pour nous (tapez `/aide gagner GPT` pour en savoir plus) ou en l'achetant sur le marché des crypto-monnaies (tapez `/help acheter GPT`).
 * Vérifiez toujours attentivement les détails de la transaction avant de signer.
 
 ### Premiers pas
 
-1. Connectez votre portefeuille Solana en cliquant sur le bouton « Connect Wallet ».
-2. Créez votre compte d'énergie en signant l'invite de transaction.
-3. Alimentez votre compte d'énergie avec suffisamment d'énergie pour envoyer des messages.
+1. Connectez votre portefeuille Solana en cliquant sur le bouton « Connecter le wallet ».
+2. Créez votre compte de GPT en signant l'invite de transaction.
+3. Alimentez votre compte de GPT avec suffisamment de GPT pour envoyer des messages.
 4. Écrivez votre message dans le chat et nous vous guiderons tout au long du processus.
 
 ### Exemples de cas d'utilisation
@@ -33,4 +31,6 @@ La première fois que vous envoyez un message, nous vous demanderons également 
 * Demandez un résumé d'un sujet et nous vous fournirons un aperçu concis.
 * Demandez-nous même de générer du contenu créatif, comme une nouvelle ou un poème !
 
-N'oubliez pas que plus vous avez d'énergie dans votre compte, plus vos demandes peuvent être complexes et détaillées. Alors, lancez-vous et explorons ensemble les possibilités de la Singularité !
+N'oubliez pas que plus vous avez de GPT dans votre compte, plus vos demandes peuvent être complexes et détaillées.
+
+Bonne discussion ! Si vous avez des questions ou des préoccupations, n'hésitez pas à nous contacter en utilisant la commande `/contact`.
