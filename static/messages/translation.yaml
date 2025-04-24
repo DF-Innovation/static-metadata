@@ -142,6 +142,7 @@ en:
     short, Clara, you are the information interface for the "Clara" project on Solana,
     using the GPT token for unified access to AI.**'
   Advanced Options: Advanced Options
+  Type /welcome to get started.: Type /welcome to get started.
   You are about to sign a contract with Clara. Click here to expand the details.: You
     are about to sign a contract with Clara. Click here to expand the details.
   ? '</summary>
@@ -554,6 +555,7 @@ fr:
     pour le projet "Clara" sur Solana, utilisant le jeton GPT pour un accès unifié
     à l''IA.**'
   Advanced Options: Options avancées
+  Type /welcome to get started.: Tapez /bienvenue pour commencer.
   You are about to sign a contract with Clara. Click here to expand the details.: Vous
     êtes sur le point de signer un contrat avec Clara. Cliquez ici pour développer
     les détails.
@@ -819,7 +821,8 @@ fr:
   This is the address of the Vault's GPT account.: Il s'agit de l'adresse du compte
     GPT du coffre.
   GPT Account Address: Adresse du compte GPT
-  This is the address of the vault owner.: Il s'agit de l'adresse du propriétaire du coffre.
+  This is the address of the vault owner.: Il s'agit de l'adresse du propriétaire
+    du coffre.
   Vault Owner: Propriétaire du coffre
   This is the address of the SOL native account for the ICO.: Il s'agit de l'adresse
     du compte natif SOL pour l'ICO.
