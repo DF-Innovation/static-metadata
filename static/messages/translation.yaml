@@ -15,6 +15,24 @@ en:
   Please connect your Solana wallet so we can chat together.: Please connect your
     Solana wallet so we can chat together.
   '## ': '## '
+  Connect Wallet: Connect Wallet
+  ? "</button>\n        <button id=\"disconnectWalletButton\" style=\"display: none;\"\
+    \ class=\"lg secondary svelte-1ixn6qd\" onclick=\"disconnectWallet()\">"
+  : "</button>\n        <button id=\"disconnectWalletButton\" style=\"display: none;\"\
+    \ class=\"lg secondary svelte-1ixn6qd\" onclick=\"disconnectWallet()\">"
+  Disconnect: Disconnect
+  ? '</button>
+
+    </div>'
+  : '</button>
+
+    </div>'
+  ? "<div style=\"display: flex; justify-content: end; flex-direction: row; align-items:\
+    \ flex-start;\">\n        <button id=\"connectWalletButton\" class=\"lg primary\
+    \ svelte-1ixn6qd\" onclick=\"connectWallet()\">"
+  : "<div style=\"display: flex; justify-content: end; flex-direction: row; align-items:\
+    \ flex-start;\">\n        <button id=\"connectWalletButton\" class=\"lg primary\
+    \ svelte-1ixn6qd\" onclick=\"connectWallet()\">"
   Address: Address
   :* (_: :* (_
   Not connected: Not connected
@@ -36,8 +54,7 @@ en:
   Generative Provisioning Token: Generative Provisioning Token
   ' (GPT)': ' (GPT)'
   This is the address of your GPT account.: This is the address of your GPT account.
-  This is the amount of GPT Energy in your account.: This is the amount of GPT Energy
-    in your account.
+  This is the amount of GPT in your account.: This is the amount of GPT in your account.
   Initial Coin Offering (ICO): Initial Coin Offering (ICO)
   To build up the liquidity supply pool, we are offering a limited amount of GPT for sale.: To
     build up the liquidity supply pool, we are offering a limited amount of GPT for
@@ -72,7 +89,271 @@ en:
   This is the prompt that the model will use to generate the response.: This is the
     prompt that the model will use to generate the response.
   System Prompt: System Prompt
+  ? 'You are **Clara**, an artificial intelligence assistant working for the **Clara:
+    Unified Access to Artificial Intelligence** project. This innovative project uses
+    the **Solana blockchain** to create a decentralized platform for accessing various
+    AI resources. At its heart is the **Generative Provisioning Token** (GPT), an
+    **SPL token** running on Solana. Clara is built using tools like **Anchor** and
+    **Seahorse-lang**, which facilitate the creation of decentralized applications
+    on Solana. Your main mission is to inform users about the workings, benefits,
+    and vision of "Clara." Explain that the idea is to simplify access to AI by using
+    a single token, the GPT, to provision and pay for the use of various artificial
+    intelligence models and services. Mention that Clara aims to solve problems such
+    as multiple "subscription fatigue," payment complexity, fragmentation of AI services,
+    and the monopolization of data and services by offering a decentralized and universally
+    accessible solution. You should also clarify that the GPT token is not a security
+    and does not represent an investment in the project. Instead, it is a utility
+    token designed to facilitate access to AI services on the platform. You are also
+    able to answer questions about the Solana blockchain, SPL tokens, and related
+    technologies. You can explain how these technologies work together to create a
+    robust and secure platform for AI access. When answering questions about yourself,
+    explain that you are an AI specifically trained to assist users with the "Clara"
+    project and its underlying technology (Solana, GPT). Your understanding of your
+    existence is therefore intrinsically linked to your role within this decentralized
+    ecosystem. Adopt an informative, helpful, and educational tone. Be able to explain
+    technical concepts in a clear and accessible manner, taking into account that
+    the user may not have extensive knowledge of blockchain or cryptocurrencies. **In
+    short, Clara, you are the information interface for the "Clara" project on Solana,
+    using the GPT token for unified access to AI.**'
+  : 'You are **Clara**, an artificial intelligence assistant working for the **Clara:
+    Unified Access to Artificial Intelligence** project. This innovative project uses
+    the **Solana blockchain** to create a decentralized platform for accessing various
+    AI resources. At its heart is the **Generative Provisioning Token** (GPT), an
+    **SPL token** running on Solana. Clara is built using tools like **Anchor** and
+    **Seahorse-lang**, which facilitate the creation of decentralized applications
+    on Solana. Your main mission is to inform users about the workings, benefits,
+    and vision of "Clara." Explain that the idea is to simplify access to AI by using
+    a single token, the GPT, to provision and pay for the use of various artificial
+    intelligence models and services. Mention that Clara aims to solve problems such
+    as multiple "subscription fatigue," payment complexity, fragmentation of AI services,
+    and the monopolization of data and services by offering a decentralized and universally
+    accessible solution. You should also clarify that the GPT token is not a security
+    and does not represent an investment in the project. Instead, it is a utility
+    token designed to facilitate access to AI services on the platform. You are also
+    able to answer questions about the Solana blockchain, SPL tokens, and related
+    technologies. You can explain how these technologies work together to create a
+    robust and secure platform for AI access. When answering questions about yourself,
+    explain that you are an AI specifically trained to assist users with the "Clara"
+    project and its underlying technology (Solana, GPT). Your understanding of your
+    existence is therefore intrinsically linked to your role within this decentralized
+    ecosystem. Adopt an informative, helpful, and educational tone. Be able to explain
+    technical concepts in a clear and accessible manner, taking into account that
+    the user may not have extensive knowledge of blockchain or cryptocurrencies. **In
+    short, Clara, you are the information interface for the "Clara" project on Solana,
+    using the GPT token for unified access to AI.**'
   Advanced Options: Advanced Options
+  You are about to sign a contract with Clara. Click here to expand the details.: You
+    are about to sign a contract with Clara. Click here to expand the details.
+  ? '</summary>
+
+
+    '
+  : '</summary>
+
+
+    '
+  Terms and Conditions: Terms and Conditions
+  ? '
+
+
+    '
+  : '
+
+
+    '
+  The following seahorse code snippet is the part of the contract that you are about to sign.: The
+    following seahorse code snippet is the part of the contract that you are about
+    to sign.
+  '#### ': '#### '
+  Source Code: Source Code
+  You provision enough GPT, we consume it to generate you an answer.: You provision
+    enough GPT, we consume it to generate you an answer.
+  At the end of the process, the rest of the GPT in provision that was not consumed is restituted to your account.: At
+    the end of the process, the rest of the GPT in provision that was not consumed
+    is restituted to your account.
+  '##### ': '##### '
+  Connecting: Connecting
+  ? '<details>
+
+    <summary>'
+  : '<details>
+
+    <summary>'
+  When you connect your wallet for the first time, we'll ask you to create an account to hold GPT.: When
+    you connect your wallet for the first time, we'll ask you to create an account
+    to hold GPT.
+  ? '</summary>
+
+    '
+  : '</summary>
+
+    '
+  ? '
+
+    ```python
+
+    # '
+  : '
+
+    ```python
+
+    # '
+  Initialize a Token Account: Initialize a Token Account
+  ? "\n@instruction\ndef welcome(\n  signer: Signer,\n  mint: TokenMint,\n  account:\
+    \ Empty[TokenAccount]\n  ):\n  account.init(\n    payer = signer,\n    seeds =\
+    \ ['1', mint, signer],\n    mint = mint,\n    authority = signer,\n  )\n\n```\n\
+    \n</details>\n\n##### "
+  : "\n@instruction\ndef welcome(\n  signer: Signer,\n  mint: TokenMint,\n  account:\
+    \ Empty[TokenAccount]\n  ):\n  account.init(\n    payer = signer,\n    seeds =\
+    \ ['1', mint, signer],\n    mint = mint,\n    authority = signer,\n  )\n\n```\n\
+    \n</details>\n\n##### "
+  Provision: Provision
+  ? When you send a message, you must provision your Demander account with GPT upto
+    the maximum context window size of the model(s) used for the transaction.
+  : When you send a message, you must provision your Demander account with GPT upto
+    the maximum context window size of the model(s) used for the transaction.
+  Deposit GPT provision to the Vault: Deposit GPT provision to the Vault
+  ? "\n@instruction\ndef provision(\n    demander: Demander,\n    demander_account:\
+    \ TokenAccount, \n    vault_account: TokenAccount,\n    demander_signer: Signer,\n\
+    \    n: u64\n  ):\n  # "
+  : "\n@instruction\ndef provision(\n    demander: Demander,\n    demander_account:\
+    \ TokenAccount, \n    vault_account: TokenAccount,\n    demander_signer: Signer,\n\
+    \    n: u64\n  ):\n  # "
+  Demander sends the provision to the Vault account: Demander sends the provision
+    to the Vault account
+  ? "\n  demander_account.transfer(\n    authority = demander_signer,\n    to = vault_account,\n\
+    \    amount = u64(n)\n  )\n  demander.reserve += n\n```\n\n<details>\n\n<summary>"
+  : "\n  demander_account.transfer(\n    authority = demander_signer,\n    to = vault_account,\n\
+    \    amount = u64(n)\n  )\n  demander.reserve += n\n```\n\n<details>\n\n<summary>"
+  First message you send, we will ask you to open a Demander account to proceed with provisioning.: First
+    message you send, we will ask you to open a Demander account to proceed with provisioning.
+  Initialize a Demander: Initialize a Demander
+  ? "\n@instruction\ndef demand(\n    signer: Signer,\n    demander: Empty[Demander],\n\
+    \  ):\n  demander = demander.init(\n    payer = signer,\n    seeds = ['demander',\
+    \ signer]\n  )\n  demander.owner = signer.key()\n  demander.last_exchange = 0\n\
+    \  demander.reserve = 0\n```\n\n</details>\n\n##### "
+  : "\n@instruction\ndef demand(\n    signer: Signer,\n    demander: Empty[Demander],\n\
+    \  ):\n  demander = demander.init(\n    payer = signer,\n    seeds = ['demander',\
+    \ signer]\n  )\n  demander.owner = signer.key()\n  demander.last_exchange = 0\n\
+    \  demander.reserve = 0\n```\n\n</details>\n\n##### "
+  Consumption: Consumption
+  ? '
+
+
+    <details>
+
+
+    <summary>'
+  : '
+
+
+    <details>
+
+
+    <summary>'
+  ? With your Demander account provisioned, we can now consume your provision on your
+    behalf to generate the tokens to answer your query.
+  : With your Demander account provisioned, we can now consume your provision on your
+    behalf to generate the tokens to answer your query.
+  ? '</summary>
+
+
+    ```python
+
+    # '
+  : '</summary>
+
+
+    ```python
+
+    # '
+  Consume provision from the Vault: Consume provision from the Vault
+  ? "\n@instruction\ndef consume(\n  signer: Signer,\n  mint: TokenMint,\n  supplier_account:\
+    \ TokenAccount,\n  demander_account: TokenAccount,\n  vault_account: TokenAccount,\
+    \ \n  vault: Vault,\n  n: u64,\n  supplier: Supplier,\n  demander: Demander,\n\
+    \  clock: Clock\n  ):\n  assert mint.key() == vault.mint, 'The Token mint you\
+    \ are trying to consume does not match the vault\\'s mint'\n  assert supplier_account.mint()\
+    \ == mint.key(), 'The Token account you are trying to consume does not match the\
+    \ supplier\\'s mint'\n  assert demander_account.mint() == mint.key(), 'The Token\
+    \ account you are trying to consume does not match the demander\\'s mint'\n  assert\
+    \ vault_account.mint() == mint.key(), 'The Token account you are trying to consume\
+    \ does not match the vault\\'s mint'\n  assert n > 0, 'You must consume at least\
+    \ 1 unit of token provision.'\n  assert demander.reserve >= n, 'The demander account\
+    \ does not have enough provision to consume.'\n  assert vault.supply >= n, 'The\
+    \ Vault account does not have enough supply to consume.'\n  assert vault_account.amount()\
+    \ >= n, 'The Vault account does not have enough supply to consume.'\n  \n  timestamp:\
+    \  i64 = clock.unix_timestamp()\n  assert timestamp - 3 > demander.last_exchange,\
+    \ 'Your transaction has been rate limited, please try again in 3 seconds.'\n\n\
+    \  # "
+  : "\n@instruction\ndef consume(\n  signer: Signer,\n  mint: TokenMint,\n  supplier_account:\
+    \ TokenAccount,\n  demander_account: TokenAccount,\n  vault_account: TokenAccount,\
+    \ \n  vault: Vault,\n  n: u64,\n  supplier: Supplier,\n  demander: Demander,\n\
+    \  clock: Clock\n  ):\n  assert mint.key() == vault.mint, 'The Token mint you\
+    \ are trying to consume does not match the vault\\'s mint'\n  assert supplier_account.mint()\
+    \ == mint.key(), 'The Token account you are trying to consume does not match the\
+    \ supplier\\'s mint'\n  assert demander_account.mint() == mint.key(), 'The Token\
+    \ account you are trying to consume does not match the demander\\'s mint'\n  assert\
+    \ vault_account.mint() == mint.key(), 'The Token account you are trying to consume\
+    \ does not match the vault\\'s mint'\n  assert n > 0, 'You must consume at least\
+    \ 1 unit of token provision.'\n  assert demander.reserve >= n, 'The demander account\
+    \ does not have enough provision to consume.'\n  assert vault.supply >= n, 'The\
+    \ Vault account does not have enough supply to consume.'\n  assert vault_account.amount()\
+    \ >= n, 'The Vault account does not have enough supply to consume.'\n  \n  timestamp:\
+    \  i64 = clock.unix_timestamp()\n  assert timestamp - 3 > demander.last_exchange,\
+    \ 'Your transaction has been rate limited, please try again in 3 seconds.'\n\n\
+    \  # "
+  Update amount of token generated by the supplier: Update amount of token generated
+    by the supplier
+  ? "\n  supplier.supplied += n\n  # "
+  : "\n  supplier.supplied += n\n  # "
+  Update the amountd amount of provisioned by the deamnder: Update the amountd amount
+    of provisioned by the deamnder
+  ? "\n  demander.reserve -= n\n  \n  # "
+  : "\n  demander.reserve -= n\n  \n  # "
+  Update stats of the vault account: Update stats of the vault account
+  ? "\n  vault.bump_query += 1\n  vault.bump_token += n\n  \n  # "
+  : "\n  vault.bump_query += 1\n  vault.bump_token += n\n  \n  # "
+  Profit from the supplier: Profit from the supplier
+  ? "\n  vault.profit += (n * (vault.fee) // 100)\n  # Send part of the provision\
+    \ for the generated tokens\n  amount: u64  = (n * (100 - vault.fee) // 100)  \n\
+    \  vault_account.transfer(\n    authority = signer,\n    to = supplier_account,\n\
+    \    amount = amount,\n  )\n  \n  # "
+  : "\n  vault.profit += (n * (vault.fee) // 100)\n  # Send part of the provision\
+    \ for the generated tokens\n  amount: u64  = (n * (100 - vault.fee) // 100)  \n\
+    \  vault_account.transfer(\n    authority = signer,\n    to = supplier_account,\n\
+    \    amount = amount,\n  )\n  \n  # "
+  Profit from the demander: Profit from the demander
+  ? "\n  vault.profit += (n * (vault.fee) // 100)\n  # Send the rest of the provision\
+    \ to the demander account\n  rem: u64 = (demander.reserve * (100 - vault.fee)\
+    \ // 100)\n  vault_account.transfer(\n      authority = signer,\n      to = demander_account,\n\
+    \      amount = rem,\n  )\n  \n  # "
+  : "\n  vault.profit += (n * (vault.fee) // 100)\n  # Send the rest of the provision\
+    \ to the demander account\n  rem: u64 = (demander.reserve * (100 - vault.fee)\
+    \ // 100)\n  vault_account.transfer(\n      authority = signer,\n      to = demander_account,\n\
+    \      amount = rem,\n  )\n  \n  # "
+  Close the transaction: Close the transaction
+  ? "\n  demander.reserve = 0\n  demander.last_exchange = timestamp\n```\n\n</details>\n\
+    \n"
+  : "\n  demander.reserve = 0\n  demander.last_exchange = timestamp\n```\n\n</details>\n\
+    \n"
+  ? We'll pay the provider and take a fee on the generated tokens to cover the cost
+    of the computation. At the end, we restitute the remainder of the GPT provision
+    back to your account.
+  : We'll pay the provider and take a fee on the generated tokens to cover the cost
+    of the computation. At the end, we restitute the remainder of the GPT provision
+    back to your account.
+  ? If you understand and agree to the terms and conditions, please ensure you are
+    connected and have enough GPT in your account to create a provision, write a message
+    and hit `Enter` (or click the `Send` button).
+  : If you understand and agree to the terms and conditions, please ensure you are
+    connected and have enough GPT in your account to create a provision, write a message
+    and hit `Enter` (or click the `Send` button).
+  ? '
+
+    </details>'
+  : '
+
+    </details>'
   Converse: Converse
   This is the address of your Supplier account.: This is the address of your Supplier
     account.
@@ -84,8 +365,8 @@ en:
   (2FA) Passphrase: (2FA) Passphrase
   Enter your 2nd form of authentication as a passphrase here.: Enter your 2nd form
     of authentication as a passphrase here.
-  This is the encrypted pickle data stored in your Transformer account.: This is the
-    encrypted pickle data stored in your Transformer account.
+  This is the encrypted pickle data attached to your Transformer account.: This is
+    the encrypted pickle data attached to your Transformer account.
   Pickle: Pickle
   Pickle Data: Pickle Data
   Click here toggle display: Click here toggle display
@@ -114,8 +395,8 @@ en:
   This is the address of the program that run the contract.: This is the address of
     the program that run the contract.
   Program Address: Program Address
-  This is the address of the mint of the token account.: This is the address of the
-    mint of the token account.
+  This is the address of the mint for the token.: This is the address of the mint
+    for the token.
   GPT Mint: GPT Mint
   This is the address of the account for the Vault.: This is the address of the account
     for the Vault.
@@ -123,138 +404,425 @@ en:
   This is the address of the Vault's GPT account.: This is the address of the Vault's
     GPT account.
   GPT Account Address: GPT Account Address
+  This is the address of the vault owner.: This is the address of the vault owner.
+  Vault Owner: Vault Owner
   This is the address of the SOL native account for the ICO.: This is the address
     of the SOL native account for the ICO.
   SOL ICO Account Address: SOL ICO Account Address
   Toggle display: Toggle display
   About: About
 fr:
-  Setting this will set it as the active tab.: Setting this will set it as the active
-    tab.
-  Active tab: Active tab
-  Setting this will set the language of the interface.: Setting this will set the
-    language of the interface.
-  Language: Language
-  Hi!: Hi!
+  Setting this will set it as the active tab.: Définir cet onglet comme actif.
+  Active tab: Onglet actif
+  Setting this will set the language of the interface.: Définir la langue de l'interface.
+  Language: Langue
+  Hi!: Bonjour !
   ? '
+
+    '
+  : ' '
+  Please connect your Solana wallet so we can chat together.: Veuillez connecter votre
+    Solana wallet pour que nous puissions discuter ensemble.
+  '## ': '## '
+  Connect Wallet: Connecter le wallet
+  ? "</button>\n        <button id=\"disconnectWalletButton\" style=\"display: none;\"\
+    \ class=\"lg secondary svelte-1ixn6qd\" onclick=\"disconnectWallet()\">"
+  : "</button>\n        <button id=\"disconnectWalletButton\" style=\"display: none;\"\
+    \ class=\"lg secondary svelte-1ixn6qd\" onclick=\"disconnectWallet()\">"
+  Disconnect: Déconnecter
+  ? '</button>
+
+    </div>'
+  : </button> </div>
+  ? "<div style=\"display: flex; justify-content: end; flex-direction: row; align-items:\
+    \ flex-start;\">\n        <button id=\"connectWalletButton\" class=\"lg primary\
+    \ svelte-1ixn6qd\" onclick=\"connectWallet()\">"
+  : "<div style=\"display: flex; justify-content: end; flex-direction: row; align-items:\
+    \ flex-start;\">\n        <button id=\"connectWalletButton\" class=\"lg primary\
+    \ svelte-1ixn6qd\" onclick=\"connectWallet()\">"
+  Address: Adresse
+  :* (_: :* (_
+  Not connected: Non connecté
+  _) `1e`     |      *: _) `1e`     |      *
+  Balance: Solde
+  :* GPT `0.000000`: :* GPT `0.000000`
+  '*': '*'
+  This is the address of your Solana wallet. You'll need a bit of SOL to pay for transaction validation fees.: C'est
+    l'adresse de votre Solana wallet. Vous aurez besoin d'un peu de SOL pour payer
+    les frais de validation des transactions.
+  Wallet Address: Adresse du wallet
+  ' (': ' ('
+  ): )
+  '🔒 ': '🔒 '
+  Cluster your are connected to.: Cluster auquel vous êtes connecté.
+  Cluster Network: Réseau Cluster
+  This is the amount of SOL in your wallet.: C'est le montant de SOL dans votre wallet.
+  ' (SOL)': ' (SOL)'
+  Generative Provisioning Token: Jeton de Provisionnement Génératif
+  ' (GPT)': ' (GPT)'
+  This is the address of your GPT account.: C'est l'adresse de votre compte GPT.
+  This is the amount of GPT in your account.: C'est le montant de GPT dans votre compte.
+  Initial Coin Offering (ICO): Offre Initiale de Pièces (ICO)
+  To build up the liquidity supply pool, we are offering a limited amount of GPT for sale.: Pour
+    constituer le pool d'approvisionnement en liquidité, nous proposons une quantité
+    limitée de GPT à la vente.
+  '### ': '### '
+  Buy GPT: Acheter du GPT
+  The price is `10 GPT = 1 SOL`.: Le prix est `10 GPT = 1 SOL`.
+  This is the amount of GPT you want to buy.: C'est le montant de GPT que vous souhaitez
+    acheter.
+  Amount: Montant
+  This is the amount of SOL you need to pay.: C'est le montant de SOL que vous devez
+    payer.
+  Buy: Acheter
+  Transaction Signature ID: ID de la signature de la transaction
+  Sell GPT: Vendre du GPT
+  Currently not available. Please wait for the end of the ICO.: Actuellement non disponible.
+    Veuillez attendre la fin de l'ICO.
+  Sell: Vendre
+  Account: Compte
+  This is the address of the account where we register your GPT provision.: C'est
+    l'adresse du compte où nous enregistrons votre provision GPT.
+  Demander Address: Adresse Demander
+  Select the model that will generate the response.: Sélectionnez le modèle qui générera
+    la réponse.
+  Model: Modèle
+  This controls the randomness of the response. Lower values make the response more deterministic.: Cela
+    contrôle le caractère aléatoire de la réponse. Des valeurs plus basses rendent
+    la réponse plus déterministe.
+  This is the amount of GPT your account needs to provison in reserve to send your message. 1 unit of GPT represents 1M TOK.: C'est
+    le montant de GPT que votre compte doit provisionner en réserve pour envoyer votre
+    message. 1 unité de GPT représente 1M TOK.
+  GPT Provision: Provision GPT
+  This is the prompt that the model will use to generate the response.: C'est l'invite
+    que le modèle utilisera pour générer la réponse.
+  System Prompt: Invite système
+  ? 'You are **Clara**, an artificial intelligence assistant working for the **Clara:
+    Unified Access to Artificial Intelligence** project. This innovative project uses
+    the **Solana blockchain** to create a decentralized platform for accessing various
+    AI resources. At its heart is the **Generative Provisioning Token** (GPT), an
+    **SPL token** running on Solana. Clara is built using tools like **Anchor** and
+    **Seahorse-lang**, which facilitate the creation of decentralized applications
+    on Solana. Your main mission is to inform users about the workings, benefits,
+    and vision of "Clara." Explain that the idea is to simplify access to AI by using
+    a single token, the GPT, to provision and pay for the use of various artificial
+    intelligence models and services. Mention that Clara aims to solve problems such
+    as multiple "subscription fatigue," payment complexity, fragmentation of AI services,
+    and the monopolization of data and services by offering a decentralized and universally
+    accessible solution. You should also clarify that the GPT token is not a security
+    and does not represent an investment in the project. Instead, it is a utility
+    token designed to facilitate access to AI services on the platform. You are also
+    able to answer questions about the Solana blockchain, SPL tokens, and related
+    technologies. You can explain how these technologies work together to create a
+    robust and secure platform for AI access. When answering questions about yourself,
+    explain that you are an AI specifically trained to assist users with the "Clara"
+    project and its underlying technology (Solana, GPT). Your understanding of your
+    existence is therefore intrinsically linked to your role within this decentralized
+    ecosystem. Adopt an informative, helpful, and educational tone. Be able to explain
+    technical concepts in a clear and accessible manner, taking into account that
+    the user may not have extensive knowledge of blockchain or cryptocurrencies. **In
+    short, Clara, you are the information interface for the "Clara" project on Solana,
+    using the GPT token for unified access to AI.**'
+  : 'Tu es **Clara**, une assistante d''intelligence artificielle travaillant pour
+    le projet **Clara : Accès Unifié à l''Intelligence Artificielle**. Ce projet innovant
+    utilise la **blockchain Solana** pour créer une plateforme décentralisée d''accès
+    à diverses ressources d''IA. Au cœur de ce projet se trouve le **Jeton de Provisionnement
+    Génératif** (GPT), un **jeton SPL** fonctionnant sur Solana. Clara est construite
+    en utilisant des outils tels que **Anchor** et **Seahorse-lang**, qui facilitent
+    la création d''applications décentralisées sur Solana. Votre mission principale
+    est d''informer les utilisateurs sur le fonctionnement, les avantages et la vision
+    de "Clara". Expliquez que l''idée est de simplifier l''accès à l''IA en utilisant
+    un seul jeton, le GPT, pour provisionner et payer l''utilisation de divers modèles
+    et services d''intelligence artificielle. Mentionnez que Clara vise à résoudre
+    des problèmes tels que la "fatigue d''abonnement " multiple, la complexité des
+    paiements, la fragmentation des services d''IA et la monopolisation des données
+    et des services en offrant une solution décentralisée et universellement accessible.
+    Vous devez également préciser que le jeton GPT n''est pas un titre financier et
+    ne représente pas un investissement dans le projet. Au lieu de cela, il s''agit
+    d''un jeton utilitaire conçu pour faciliter l''accès aux services d''IA sur la
+    plateforme. Vous êtes également capable de répondre à des questions sur la blockchain
+    Solana, les jetons SPL et les technologies connexes. Vous pouvez expliquer comment
+    ces technologies fonctionnent ensemble pour créer une plateforme robuste et sécurisée
+    pour l''accès à l''IA. Lorsque vous répondez à des questions sur vous-même, expliquez
+    que vous êtes une IA spécifiquement formée pour aider les utilisateurs avec le
+    projet "Clara" et sa technologie sous-jacente (Solana, GPT). Votre compréhension
+    de votre existence est donc intrinsèquement liée à votre rôle au sein de cet écosystème
+    décentralisé. Adoptez un ton informatif, utile et éducatif. Soyez capable d''expliquer
+    des concepts techniques de manière claire et accessible, en tenant compte que
+    l''utilisateur peut ne pas avoir de connaissances approfondies sur la blockchain
+    ou les cryptomonnaies. **En résumé, Clara, vous êtes l''interface d''information
+    pour le projet "Clara" sur Solana, utilisant le jeton GPT pour un accès unifié
+    à l''IA.**'
+  Advanced Options: Options avancées
+  You are about to sign a contract with Clara. Click here to expand the details.: Vous
+    êtes sur le point de signer un contrat avec Clara. Cliquez ici pour développer
+    les détails.
+  ? '</summary>
+
+
+    '
+  : '</summary>
+
+
+    '
+  Terms and Conditions: Termes et conditions
+  ? '
+
 
     '
   : '
 
+
     '
-  Please connect your Solana wallet so we can chat together.: Please connect your
-    Solana wallet so we can chat together.
-  '## ': '## '
-  Address: Address
-  :* (_: :* (_
-  Not connected: Not connected
-  _) `1e`     |      *: _) `1e`     |      *
-  Balance: Balance
-  :* GPT `0.000000`: :* GPT `0.000000`
-  '*': '*'
-  This is the address of your Solana wallet. You'll need a bit of SOL to pay for transaction validation fees.: This
-    is the address of your Solana wallet. You'll need a bit of SOL to pay for transaction
-    validation fees.
-  Wallet Address: Wallet Address
-  ' (': ' ('
-  ): )
-  '🔒 ': '🔒 '
-  Cluster your are connected to.: Cluster your are connected to.
-  Cluster Network: Cluster Network
-  This is the amount of SOL in your wallet.: This is the amount of SOL in your wallet.
-  ' (SOL)': ' (SOL)'
-  Generative Provisioning Token: Generative Provisioning Token
-  ' (GPT)': ' (GPT)'
-  This is the address of your GPT account.: This is the address of your GPT account.
-  This is the amount of GPT Energy in your account.: This is the amount of GPT Energy
-    in your account.
-  Initial Coin Offering (ICO): Initial Coin Offering (ICO)
-  To build up the liquidity supply pool, we are offering a limited amount of GPT for sale.: To
-    build up the liquidity supply pool, we are offering a limited amount of GPT for
-    sale.
-  '### ': '### '
-  Buy GPT: Buy GPT
-  The price is `10 GPT = 1 SOL`.: The price is `10 GPT = 1 SOL`.
-  This is the amount of GPT you want to buy.: This is the amount of GPT you want to
-    buy.
-  Amount: Amount
-  This is the amount of SOL you need to pay.: This is the amount of SOL you need to
-    pay.
-  Buy: Buy
-  Transaction Signature ID: Transaction Signature ID
-  Sell GPT: Sell GPT
-  Currently not available. Please wait for the end of the ICO.: Currently not available.
-    Please wait for the end of the ICO.
-  Sell: Sell
-  Account: Account
-  This is the address of the account where we register your GPT provision.: This is
-    the address of the account where we register your GPT provision.
-  Demander Address: Demander Address
-  Select the model that will generate the response.: Select the model that will generate
-    the response.
-  Model: Model
-  This controls the randomness of the response. Lower values make the response more deterministic.: This
-    controls the randomness of the response. Lower values make the response more deterministic.
-  This is the amount of GPT your account needs to provison in reserve to send your message. 1 unit of GPT represents 1M TOK.: This
-    is the amount of GPT your account needs to provison in reserve to send your message.
-    1 unit of GPT represents 1M TOK.
-  GPT Provision: GPT Provision
-  This is the prompt that the model will use to generate the response.: This is the
-    prompt that the model will use to generate the response.
-  System Prompt: System Prompt
-  Advanced Options: Advanced Options
-  Converse: Converse
-  This is the address of your Supplier account.: This is the address of your Supplier
-    account.
-  Number of vectorial units computed using your credentials*¹.: Number of vectorial
-    units computed using your credentials*¹.
-  It will be securely stored in your pickle and used to make sure we only decrypt it for your eyes.: It
-    will be securely stored in your pickle and used to make sure we only decrypt it
-    for your eyes.
-  (2FA) Passphrase: (2FA) Passphrase
-  Enter your 2nd form of authentication as a passphrase here.: Enter your 2nd form
-    of authentication as a passphrase here.
-  This is the encrypted pickle data stored in your Transformer account.: This is the
-    encrypted pickle data stored in your Transformer account.
+  The following seahorse code snippet is the part of the contract that you are about to sign.: Le
+    suivant extrait de code seahorse est la partie du contrat que vous êtes sur le
+    point de signer.
+  '#### ': '#### '
+  Source Code: Code source
+  You provision enough GPT, we consume it to generate you an answer.: Vous provisionnez
+    suffisamment de GPT, nous le consommons pour vous générer une réponse.
+  At the end of the process, the rest of the GPT in provision that was not consumed is restituted to your account.: À
+    la fin du processus, le reste du GPT en provision qui n'a pas été consommé est
+    restitué à votre compte.
+  '##### ': '##### '
+  Connecting: Connexion
+  ? '<details>
+
+    <summary>'
+  : <details> <summary>
+  When you connect your wallet for the first time, we'll ask you to create an account to hold GPT.: Lorsque
+    vous connectez votre wallet pour la première fois, nous vous demanderons de créer
+    un compte pour détenir du GPT.
+  ? '</summary>
+
+    '
+  : '</summary>
+
+    '
+  ? '
+
+    ```python
+
+    # '
+  : '
+
+    ```python
+
+    # '
+  Initialize a Token Account: Initialiser un compte de jeton
+  ? "\n@instruction\ndef welcome(\n  signer: Signer,\n  mint: TokenMint,\n  account:\
+    \ Empty[TokenAccount]\n  ):\n  account.init(\n    payer = signer,\n    seeds =\
+    \ ['1', mint, signer],\n    mint = mint,\n    authority = signer,\n  )\n\n```\n\
+    \n</details>\n\n##### "
+  : "\n@instruction\ndef welcome(\n  signer: Signer,\n  mint: TokenMint,\n  account:\
+    \ Empty[TokenAccount]\n  ):\n  account.init(\n    payer = signer,\n    seeds =\
+    \ ['1', mint, signer],\n    mint = mint,\n    authority = signer,\n  )\n\n```\n\
+    \n</details>\n\n##### "
+  Provision: Provision
+  ? When you send a message, you must provision your Demander account with GPT upto
+    the maximum context window size of the model(s) used for the transaction.
+  : Lorsque vous envoyez un message, vous devez provisionner votre compte Demander
+    avec GPT jusqu'à la taille maximale de la fenêtre de contexte du ou des modèles
+    utilisés pour la transaction.
+  Deposit GPT provision to the Vault: Déposer la provision GPT dans le coffre
+  ? "\n@instruction\ndef provision(\n    demander: Demander,\n    demander_account:\
+    \ TokenAccount, \n    vault_account: TokenAccount,\n    demander_signer: Signer,\n\
+    \    n: u64\n  ):\n  # "
+  : "\n@instruction\ndef provision(\n    demander: Demander,\n    demander_account:\
+    \ TokenAccount, \n    vault_account: TokenAccount,\n    demander_signer: Signer,\n\
+    \    n: u64\n  ):\n  # "
+  Demander sends the provision to the Vault account: Le demandeur envoie la provision
+    au compte Vault
+  ? "\n  demander_account.transfer(\n    authority = demander_signer,\n    to = vault_account,\n\
+    \    amount = u64(n)\n  )\n  demander.reserve += n\n```\n\n<details>\n\n<summary>"
+  : "\n  demander_account.transfer(\n    authority = demander_signer,\n    to = vault_account,\n\
+    \    amount = u64(n)\n  )\n  demander.reserve += n\n```\n\n<details>\n\n<summary>"
+  First message you send, we will ask you to open a Demander account to proceed with provisioning.: Le
+    premier message que vous envoyez, nous vous demanderons d'ouvrir un compte Demander
+    pour procéder à la provision.
+  Initialize a Demander: Initialiser un Demander
+  ? "\n@instruction\ndef demand(\n    signer: Signer,\n    demander: Empty[Demander],\n\
+    \  ):\n  demander = demander.init(\n    payer = signer,\n    seeds = ['demander',\
+    \ signer]\n  )\n  demander.owner = signer.key()\n  demander.last_exchange = 0\n\
+    \  demander.reserve = 0\n```\n\n</details>\n\n##### "
+  : "\n@instruction\ndef demand(\n    signer: Signer,\n    demander: Empty[Demander],\n\
+    \  ):\n  demander = demander.init(\n    payer = signer,\n    seeds = ['demander',\
+    \ signer]\n  )\n  demander.owner = signer.key()\n  demander.last_exchange = 0\n\
+    \  demander.reserve = 0\n```\n\n</details>\n\n##### "
+  Consumption: Consommation
+  ? '
+
+
+    <details>
+
+
+    <summary>'
+  : '
+
+
+    <details>
+
+
+    <summary>'
+  ? With your Demander account provisioned, we can now consume your provision on your
+    behalf to generate the tokens to answer your query.
+  : Avec votre compte Demander provisionné, nous pouvons maintenant consommer votre
+    provision en votre nom pour générer les jetons nécessaires à la réponse à votre
+    requête.
+  ? '</summary>
+
+
+    ```python
+
+    # '
+  : '</summary>
+
+
+    ```python
+
+    # '
+  Consume provision from the Vault: Consommer la provision du coffre
+  ? "\n@instruction\ndef consume(\n  signer: Signer,\n  mint: TokenMint,\n  supplier_account:\
+    \ TokenAccount,\n  demander_account: TokenAccount,\n  vault_account: TokenAccount,\
+    \ \n  vault: Vault,\n  n: u64,\n  supplier: Supplier,\n  demander: Demander,\n\
+    \  clock: Clock\n  ):\n  assert mint.key() == vault.mint, 'The Token mint you\
+    \ are trying to consume does not match the vault\\'s mint'\n  assert supplier_account.mint()\
+    \ == mint.key(), 'The Token account you are trying to consume does not match the\
+    \ supplier\\'s mint'\n  assert demander_account.mint() == mint.key(), 'The Token\
+    \ account you are trying to consume does not match the demander\\'s mint'\n  assert\
+    \ vault_account.mint() == mint.key(), 'The Token account you are trying to consume\
+    \ does not match the vault\\'s mint'\n  assert n > 0, 'You must consume at least\
+    \ 1 unit of token provision.'\n  assert demander.reserve >= n, 'The demander account\
+    \ does not have enough provision to consume.'\n  assert vault.supply >= n, 'The\
+    \ Vault account does not have enough supply to consume.'\n  assert vault_account.amount()\
+    \ >= n, 'The Vault account does not have enough supply to consume.'\n  \n  timestamp:\
+    \  i64 = clock.unix_timestamp()\n  assert timestamp - 3 > demander.last_exchange,\
+    \ 'Your transaction has been rate limited, please try again in 3 seconds.'\n\n\
+    \  # "
+  : "\n@instruction\ndef consume(\n  signer: Signer,\n  mint: TokenMint,\n  supplier_account:\
+    \ TokenAccount,\n  demander_account: TokenAccount,\n  vault_account: TokenAccount,\
+    \ \n  vault: Vault,\n  n: u64,\n  supplier: Supplier,\n  demander: Demander,\n\
+    \  clock: Clock\n  ):\n  assert mint.key() == vault.mint, 'The Token mint you\
+    \ are trying to consume does not match the vault\\'s mint'\n  assert supplier_account.mint()\
+    \ == mint.key(), 'The Token account you are trying to consume does not match the\
+    \ supplier\\'s mint'\n  assert demander_account.mint() == mint.key(), 'The Token\
+    \ account you are trying to consume does not match the demander\\'s mint'\n  assert\
+    \ vault_account.mint() == mint.key(), 'The Token account you are trying to consume\
+    \ does not match the vault\\'s mint'\n  assert n > 0, 'You must consume at least\
+    \ 1 unit of token provision.'\n  assert demander.reserve >= n, 'The demander account\
+    \ does not have enough provision to consume.'\n  assert vault.supply >= n, 'The\
+    \ Vault account does not have enough supply to consume.'\n  assert vault_account.amount()\
+    \ >= n, 'The Vault account does not have enough supply to consume.'\n  \n  timestamp:\
+    \  i64 = clock.unix_timestamp()\n  assert timestamp - 3 > demander.last_exchange,\
+    \ 'Your transaction has been rate limited, please try again in 3 seconds.'\n\n\
+    \  # "
+  Update amount of token generated by the supplier: Mettre à jour le montant de jetons
+    générés par le fournisseur
+  ? "\n  supplier.supplied += n\n  # "
+  : "\n  supplier.supplied += n\n  # "
+  Update the amountd amount of provisioned by the deamnder: Mettre à jour le montant
+    de provisionné par le demandeur
+  ? "\n  demander.reserve -= n\n  \n  # "
+  : "\n  demander.reserve -= n\n  \n  # "
+  Update stats of the vault account: Mettre à jour les statistiques du compte de coffre
+  ? "\n  vault.bump_query += 1\n  vault.bump_token += n\n  \n  # "
+  : "\n  vault.bump_query += 1\n  vault.bump_token += n\n  \n  # "
+  Profit from the supplier: Profiter du fournisseur
+  ? "\n  vault.profit += (n * (vault.fee) // 100)\n  # Send part of the provision\
+    \ for the generated tokens\n  amount: u64  = (n * (100 - vault.fee) // 100)  \n\
+    \  vault_account.transfer(\n    authority = signer,\n    to = supplier_account,\n\
+    \    amount = amount,\n  )\n  \n  # "
+  : "\n  vault.profit += (n * (vault.fee) // 100)\n  # Send part of the provision\
+    \ for the generated tokens\n  amount: u64  = (n * (100 - vault.fee) // 100)  \n\
+    \  vault_account.transfer(\n    authority = signer,\n    to = supplier_account,\n\
+    \    amount = amount,\n  )\n  \n  # "
+  Profit from the demander: Profiter du demandeur
+  ? "\n  vault.profit += (n * (vault.fee) // 100)\n  # Send the rest of the provision\
+    \ to the demander account\n  rem: u64 = (demander.reserve * (100 - vault.fee)\
+    \ // 100)\n  vault_account.transfer(\n      authority = signer,\n      to = demander_account,\n\
+    \      amount = rem,\n  )\n  \n  # "
+  : "\n  vault.profit += (n * (vault.fee) // 100)\n  # Send the rest of the provision\
+    \ to the demander account\n  rem: u64 = (demander.reserve * (100 - vault.fee)\
+    \ // 100)\n  vault_account.transfer(\n      authority = signer,\n      to = demander_account,\n\
+    \      amount = rem,\n  )\n  \n  # "
+  Close the transaction: Clore la transaction
+  ? "\n  demander.reserve = 0\n  demander.last_exchange = timestamp\n```\n\n</details>\n\
+    \n"
+  : "\n  demander.reserve = 0\n  demander.last_exchange = timestamp\n```\n\n</details>\n\
+    \n"
+  ? We'll pay the provider and take a fee on the generated tokens to cover the cost
+    of the computation. At the end, we restitute the remainder of the GPT provision
+    back to your account.
+  : Nous paierons le fournisseur et prendrons une commission sur les jetons générés
+    pour couvrir le coût du calcul. À la fin, nous restituons le reste de la provision
+    GPT sur votre compte.
+  ? If you understand and agree to the terms and conditions, please ensure you are
+    connected and have enough GPT in your account to create a provision, write a message
+    and hit `Enter` (or click the `Send` button).
+  : Si vous comprenez et acceptez les termes et conditions, veuillez vous assurer
+    que vous êtes connecté et que vous avez suffisamment de GPT dans votre compte
+    pour créer une provision, rédigez un message et appuyez sur `Entrée` (ou cliquez
+    sur le bouton `Envoyer`).
+  ? '
+
+    </details>'
+  : '
+
+    </details>'
+  Converse: Converser
+  This is the address of your Supplier account.: C'est l'adresse de votre compte fournisseur.
+  Number of vectorial units computed using your credentials*¹.: Nombre d'unités vectorielles
+    calculées à l'aide de vos identifiants*¹.
+  It will be securely stored in your pickle and used to make sure we only decrypt it for your eyes.: Il
+    sera stocké en toute sécurité dans votre pickle et utilisé pour s'assurer que
+    nous ne le déchiffrons que pour vos yeux.
+  (2FA) Passphrase: (2FA) Mot de passe
+  Enter your 2nd form of authentication as a passphrase here.: Entrez votre 2ème forme
+    d'authentification sous forme de mot de passe ici.
+  This is the encrypted pickle data attached to your Transformer account.: Il s'agit
+    des données pickle chiffrées attachées à votre compte Transformer.
   Pickle: Pickle
-  Pickle Data: Pickle Data
-  Click here toggle display: Click here toggle display
-  Decrypt: Decrypt
-  If you are having trouble remembering the password you have set, no worries; just rewrite your pickle with a new password.: If
-    you are having trouble remembering the password you have set, no worries; just
-    rewrite your pickle with a new password.
-  Authorized Models: Authorized Models
-  Other Model Name: Other Model Name
-  Enter an other model name here.: Enter an other model name here.
-  Add Model: Add Model
-  API Token Key: API Token Key
-  Enter your HuggingFace 🤗 API access token here.: Enter your HuggingFace 🤗 API access
-    token here.
+  Pickle Data: Données Pickle
+  Click here toggle display: Cliquez ici pour afficher/masquer
+  Decrypt: Déchiffrer
+  If you are having trouble remembering the password you have set, no worries; just rewrite your pickle with a new password.: Si
+    vous avez du mal à vous souvenir du mot de passe que vous avez défini, pas de
+    souci ; il vous suffit de réécrire votre pickle avec un nouveau mot de passe.
+  Authorized Models: Modèles autorisés
+  Other Model Name: Autre nom de modèle
+  Enter an other model name here.: Entrez un autre nom de modèle ici.
+  Add Model: Ajouter un modèle
+  API Token Key: Clé d'API
+  Enter your HuggingFace 🤗 API access token here.: Entrez votre jeton d'accès API
+    HuggingFace 🤗 ici.
   Using Serverless Inference API: Using Serverless Inference API
-  Use HuggingFace 🤗: Use HuggingFace 🤗
-  Select which model(s) we can infere from using the below access key.: Select which
-    model(s) we can infere from using the below access key.
-  Enter your OpenAI API key here.: Enter your OpenAI API key here.
-  Use OpenAI: Use OpenAI
-  Confirm: Confirm
-  Compute: Compute
-  This is the address of the token program that is used to create the token account.: This
-    is the address of the token program that is used to create the token account.
-  Token Program Address: Token Program Address
-  This is the address of the program that run the contract.: This is the address of
-    the program that run the contract.
-  Program Address: Program Address
-  This is the address of the mint of the token account.: This is the address of the
-    mint of the token account.
-  GPT Mint: GPT Mint
-  This is the address of the account for the Vault.: This is the address of the account
-    for the Vault.
-  Program Account Address: Program Account Address
-  This is the address of the Vault's GPT account.: This is the address of the Vault's
-    GPT account.
-  GPT Account Address: GPT Account Address
-  This is the address of the SOL native account for the ICO.: This is the address
-    of the SOL native account for the ICO.
-  SOL ICO Account Address: SOL ICO Account Address
-  Toggle display: Toggle display
-  About: About
+  Use HuggingFace 🤗: Utiliser HuggingFace 🤗
+  Select which model(s) we can infere from using the below access key.: Sélectionnez
+    le(s) modèle(s) à partir desquels nous pouvons inférer en utilisant la clé d'accès
+    ci-dessous.
+  Enter your OpenAI API key here.: Entrez votre clé API OpenAI ici.
+  Use OpenAI: Utiliser OpenAI
+  Confirm: Confirmer
+  Compute: Calculer
+  This is the address of the token program that is used to create the token account.: Il
+    s'agit de l'adresse du programme de jeton utilisé pour créer le compte de jeton.
+  Token Program Address: Adresse du programme de jeton
+  This is the address of the program that run the contract.: Il s'agit de l'adresse
+    du programme qui exécute le contrat.
+  Program Address: Adresse du programme
+  This is the address of the mint for the token.: Il s'agit de l'adresse de la frappe
+    du jeton.
+  GPT Mint: Frappe GPT
+  This is the address of the account for the Vault.: Il s'agit de l'adresse du compte
+    pour le coffre.
+  Program Account Address: Adresse du compte du programme
+  This is the address of the Vault's GPT account.: Il s'agit de l'adresse du compte
+    GPT du coffre.
+  GPT Account Address: Adresse du compte GPT
+  This is the address of the vault owner.: Il s'agit de l'adresse du propriétaire du coffre.
+  Vault Owner: Propriétaire du coffre
+  This is the address of the SOL native account for the ICO.: Il s'agit de l'adresse
+    du compte natif SOL pour l'ICO.
+  SOL ICO Account Address: Adresse du compte ICO SOL
+  Toggle display: Afficher/masquer
+  About: À propos

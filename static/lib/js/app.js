@@ -284,15 +284,18 @@ async function connectWallet() {
                             console.error("Welcome: Error getting latest blockhash: ", error);
                             //alert("Error getting latest blockhash: ", error);
                         });
-                            // try {
-                            //     const signedTransaction = await provider.signTransaction(transaction);
-                            //     const signature = await connection.sendRawTransaction(signedTransaction.serialize());
-                            //     await connection.confirmTransaction(signature, "confirmed");
-                            //     console.log("Welcome: Transaction sent with signature:", signature);
-                            // } catch (error) {
-                            //     console.error("Transaction failed:", error);
-                            // }
-                        // });
+                        // Wait for the transaction to be confirmed
+                        console.log("Waiting for the transaction to be confirmed...");
+                        await new Promise(resolve => setTimeout(resolve, 1000));
+                        // try {
+                        //     const signedTransaction = await provider.signTransaction(transaction);
+                        //     const signature = await connection.sendRawTransaction(signedTransaction.serialize());
+                        //     await connection.confirmTransaction(signature, "confirmed");
+                        //     console.log("Welcome: Transaction sent with signature:", signature);
+                        // } catch (error) {
+                        //     console.error("Transaction failed:", error);
+                        // }
+                    // });
                     } else {
                         console.log("Welcome back");
                     }
@@ -511,166 +514,164 @@ async function checkMetabolizerAndProvisionEnergy() {
     const metabolizer_address = document.querySelector("#metabolizer-address > label > div.input-container > textarea").value;
     console.log("Demander Address: ", metabolizer_address);
     const metabolizerPublicKey = new solanaWeb3.PublicKey(metabolizer_address);
-    await connection.getParsedAccountInfo(metabolizerPublicKey).then(async (accountInfo) => {
-        console.log("Got metabolizer info.");
+
+    try {
+        const accountInfo = await connection.getParsedAccountInfo(metabolizerPublicKey);
+        console.log("Got demander info.");
+
         console.log("Accessing provider...");
-        provider = getProvider();
-        if (provider) {
-            console.log("Found provider.");
-            try {
-                console.log("Connecting to wallet...");
-                const resp = await provider.connect();
-                const publicKey = resp.publicKey || provider.publicKey;
-                transaction = new solanaWeb3.Transaction({
-                    feePayer: publicKey,
-                });
-                const programId = new solanaWeb3.PublicKey(document.querySelector("#contract-address > label > div > textarea").value);
-                const systemProgramId = solanaWeb3.SystemProgram.programId;
-                const rentSysvarId = solanaWeb3.SYSVAR_RENT_PUBKEY;
-                accountChecked = false;
-                if (!accountInfo || !accountInfo.value) {
-                    // initialize the metabolizer
-                    console.log("Opening your demander account...");
-                    const accounts = [
-                        { pubkey: publicKey, isSigner: true, isWritable: true },
-                        { pubkey: metabolizerPublicKey, isSigner: false, isWritable: true },
-                        { pubkey: rentSysvarId, isSigner: false, isWritable: false },
-                        { pubkey: systemProgramId, isSigner: false, isWritable: false },
-                    ];
-                    // Compute the 8-byte discriminator for "demand"
-                    const metabolizeDiscriminator = await computeInstructionDiscriminator("demand");
-                    console.log("8-byte instruction discriminator:", metabolizeDiscriminator);
-                    metabolizeData = metabolizeDiscriminator;
-                    instruction = new solanaWeb3.TransactionInstruction({
-                        keys: accounts,
-                        programId: programId,
-                        data: metabolizeData,
-                    });
-                    transaction.add(instruction);
-                    connection.getLatestBlockhash().then(async (latest) => {
-                        console.log("Latest blockhash: ", latest);
-                        transaction.recentBlockhash = latest.blockhash;
-                        transaction.lastValidBlockHeight = latest.lastValidBlockHeight;
-                        transaction.feePayer = provider.publicKey;
-                        // transaction.nonceInfo = { nonce: Uint8Array.from([]) };
-                        console.log("Transaction: ", transaction);
-                        // if (!transaction.feePayer || !transaction.recentBlockhash || !transaction.lastValidBlockHeight) {
-                        //     console.error("Transaction properties are missing");
-                        //     alert("Transaction properties are missing");
-                        //     console.log(transaction.feePayer, transaction.recentBlockhash, transaction.lastValidBlockHeight);
-                        //     return;
-                        // }
-                        provider.signAndSendTransaction(transaction, { skipPreflight: false }).then((signature) => {
-                            console.log(`Metabolize: Transaction sent with signature: ${JSON.stringify(signature)}`);
-                            accountChecked = true;
-                        }).catch((error) => {
-                            console.error("Error sending transaction: ", error);
-                            alert("Error sending transaction: ", error);
-                        });
-                        // const signedTransaction = await provider.signTransaction(transaction);
-                        // const signature = await connection.sendRawTransaction(signedTransaction.serialize());
-                        // await connection.confirmTransaction(signature);
-                        // console.log(`Metabolize: Transaction sent with signature: ${JSON.stringify(signature)}`);
-                    }).catch((error) => {
-                        console.error("Error getting latest blockhash: ", error);
-                        alert("Error getting latest blockhash: ", error);
-                    });
-                } else {
-                    // or update the metabloizer
-                    console.log("Updating your metabolizer account...");
-                    accountChecked = true;
-                }
-                if (accountChecked) {
-                    console.log("Metabolizer account checked.");
-                    // Make the provision
-                    // provisionEnergy();
-                    console.log("Provisioning energy...");
-                    const tx = new solanaWeb3.Transaction({
-                        feePayer: publicKey,
-                    });
-                    const energy_address = document.querySelector("#energy-address > label > div > textarea").value;
-                    const metabolizerEnergyAccountPublicKey = new solanaWeb3.PublicKey(energy_address);
-                    const singularity_energy_address = document.querySelector("#singularity-address > label > div > textarea").value;
-                    const singularityEnergyAccountPublicKey = new solanaWeb3.PublicKey(singularity_energy_address);
-                    const n_provisoin = document.querySelector("div#context-window > div.wrap > div.head > div > input").value;
-                    if (!n_provisoin || n_provisoin === 0) {
-                        console.error("Please enter the amount of energy to provision.");
-                        return;
-                    }
-                    const TOKEN_PROGRAM_ID = new solanaWeb3.PublicKey(document.querySelector("#token-program-id > label > div > textarea").value);
-                    await connection.getParsedAccountInfo(metabolizerEnergyAccountPublicKey).then(async (meaccountInfo) => {
-                        console.log("Got metabolizer energy account info.");
-                        if (!meaccountInfo || !meaccountInfo.value) {
-                            // initialize the metabolizer energy account
-                            console.error("Metabolizer energy account doesn't exist.");
-                        } else {
-                            console.log(meaccountInfo.value);
-                            await connection.getParsedAccountInfo(singularityEnergyAccountPublicKey).then(async (seaccountInfo) => {
-                                console.log("Got singularity energy account info.");
-                                if (!seaccountInfo || !seaccountInfo.value) {
-                                    // initialize the singularity energy account
-                                    console.error("Singularity energy account doesn't exist.");
-                                } else {
-                                    const accounts = [
-                                        { pubkey: metabolizerPublicKey, isSigner: false, isWritable: true },
-                                        { pubkey: metabolizerEnergyAccountPublicKey, isSigner: false, isWritable: true },
-                                        { pubkey: singularityEnergyAccountPublicKey, isSigner: false, isWritable: true },
-                                        { pubkey: publicKey, isSigner: true, isWritable: true },
-                                        { pubkey: TOKEN_PROGRAM_ID, isSigner: false, isWritable: false },
-                                    ];
-                                    console.log("Accounts: ", accounts);
-                                    // Compute the 8-byte discriminator for "provision"
-                                    const provisionEnergyDiscriminator = await computeInstructionDiscriminator("provision");
-                                    console.log("8-byte instruction discriminator:", provisionEnergyDiscriminator);
-                                    // param: n : u64 
-                                    const nU64 = encodeU64(n_provisoin * 1e6);
-                                    console.log("nU64: ", nU64);
-                                    provisionEnergyData = new Uint8Array([...provisionEnergyDiscriminator, ...nU64]);
-                                    instruction = new solanaWeb3.TransactionInstruction({
-                                        keys: accounts,
-                                        programId: programId,
-                                        data: provisionEnergyData,
-                                    });
-                                    tx.add(instruction);
-                                    connection.getLatestBlockhash().then(async (latest) => {
-                                        console.log("Latest blockhash: ", latest);
-                                        tx.recentBlockhash = latest.blockhash;
-                                        tx.lastValidBlockHeight = latest.lastValidBlockHeight;
-                                        tx.feePayer = provider.publicKey;
-                                        // transaction.nonceInfo = { nonce: Uint8Array.from([]) };
-                                        console.log("Transaction: ", tx);
-                                        // if (!transaction.feePayer || !transaction.recentBlockhash || !transaction.lastValidBlockHeight) {
-                                        //     console.error("Transaction properties are missing");
-                                        //     alert("Transaction properties are missing");
-                                        //     console.log(transaction.feePayer, transaction.recentBlockhash, transaction.lastValidBlockHeight);
-                                        //     return;
-                                        // }
-                                        provider.signAndSendTransaction(tx, { skipPreflight: false }).then((signature) => {
-                                            console.log(`Provision: Transaction sent with signature: ${JSON.stringify(signature)}`);
-                                        }).catch((error) => {
-                                            console.error("Error sending transaction: ", error);
-                                            alert("Error sending transaction: ", error);
-                                        });
-                                        // const signedTransaction = await provider.signTransaction(tx);
-                                        // const signature = await connection.sendRawTransaction(signedTransaction.serialize());                
-                                        // await connection.confirmTransaction(signature);
-                                        // console.log(`Provision: Transaction sent with signature: ${JSON.stringify(signature)}`);
-                                    }).catch((error) => {
-                                        console.error("Error getting latest blockhash: ", error);
-                                        alert("Error getting latest blockhash: ", error);
-                                    });
-                                }
-                            });
-                        }
-                    });
-                } else {
-                    console.error("Metabolizer account could not be checked.");
-                }
-            } catch (err) {
-                console.error(err);
-            }
+        const provider = getProvider();
+        if (!provider) {
+            console.error("Provider not found.");
+            return;
         }
-    });
+        console.log("Found provider.");
+
+        console.log("Connecting to wallet...");
+        const resp = await provider.connect();
+        const publicKey = resp.publicKey || provider.publicKey;
+
+        let accountExists = accountInfo && accountInfo.value;
+
+        if (!accountExists) {
+            // Initialize the metabolizer account
+            console.log("Opening your demander account...");
+            const transaction = new solanaWeb3.Transaction({
+                feePayer: publicKey,
+            });
+            const programId = new solanaWeb3.PublicKey(document.querySelector("#contract-address > label > div > textarea").value);
+            const systemProgramId = solanaWeb3.SystemProgram.programId;
+            const rentSysvarId = solanaWeb3.SYSVAR_RENT_PUBKEY;
+
+            const accounts = [
+                { pubkey: publicKey, isSigner: true, isWritable: true },
+                { pubkey: metabolizerPublicKey, isSigner: false, isWritable: true },
+                { pubkey: rentSysvarId, isSigner: false, isWritable: false },
+                { pubkey: systemProgramId, isSigner: false, isWritable: false },
+            ];
+            const metabolizeDiscriminator = await computeInstructionDiscriminator("demand");
+            console.log("8-byte instruction discriminator:", metabolizeDiscriminator);
+            const instruction = new solanaWeb3.TransactionInstruction({
+                keys: accounts,
+                programId: programId,
+                data: metabolizeDiscriminator,
+            });
+            transaction.add(instruction);
+
+            console.log("Getting latest blockhash for demander creation...");
+            const latest = await connection.getLatestBlockhash();
+            console.log("Latest blockhash: ", latest);
+            transaction.recentBlockhash = latest.blockhash;
+            transaction.lastValidBlockHeight = latest.lastValidBlockHeight;
+            transaction.feePayer = provider.publicKey;
+            console.log("Demander Creation Transaction: ", transaction);
+
+            try {
+                console.log("Sending demander creation transaction...");
+                const signature = await provider.signAndSendTransaction(transaction, { skipPreflight: false });
+                console.log(`Demander: Transaction sent with signature: ${JSON.stringify(signature)}`);
+                console.log("Waiting for the transaction to be confirmed (approx 1s)...");
+                await new Promise(resolve => setTimeout(resolve, 1000)); // Simple delay, consider confirming transaction status instead
+                accountExists = true; // Account should now exist
+            } catch (error) {
+                console.error("Error sending demander creation transaction: ", error);
+                alert("Error creating demander account: " + error.message);
+                return; // Stop if creation failed
+            }
+        } else {
+            console.log("Demander account already exists.");
+        }
+
+        // --- Provision Energy Logic ---
+        // This part now runs only if accountExists is true (either initially or after creation)
+        if (accountExists) {
+            console.log("Proceeding to provision energy...");
+            const tx = new solanaWeb3.Transaction({
+                feePayer: publicKey,
+            });
+            const energy_address = document.querySelector("#energy-address > label > div > textarea").value;
+            const metabolizerEnergyAccountPublicKey = new solanaWeb3.PublicKey(energy_address);
+            const singularity_energy_address = document.querySelector("#singularity-address > label > div > textarea").value;
+            const singularityEnergyAccountPublicKey = new solanaWeb3.PublicKey(singularity_energy_address);
+            const n_provision_input = document.querySelector("div#context-window > div.wrap > div.head > div > input").value;
+
+            if (!n_provision_input || parseFloat(n_provision_input) === 0) {
+                console.error("Please enter the amount of energy to provision.");
+                alert("Please enter a valid amount of energy to provision.");
+                return;
+            }
+            const n_provision = parseFloat(n_provision_input);
+
+            const TOKEN_PROGRAM_ID = new solanaWeb3.PublicKey(document.querySelector("#token-program-id > label > div > textarea").value);
+            const programId = new solanaWeb3.PublicKey(document.querySelector("#contract-address > label > div > textarea").value); // Ensure programId is defined here too
+
+            // Check associated token accounts (optional but good practice)
+            const meaccountInfo = await connection.getParsedAccountInfo(metabolizerEnergyAccountPublicKey);
+            console.log("Got demander GPT account info.");
+            if (!meaccountInfo || !meaccountInfo.value) {
+                console.error("Demander GPT account doesn't exist. Cannot provision.");
+                alert("Demander GPT account doesn't exist. Cannot provision.");
+                return;
+            }
+            console.log(meaccountInfo.value);
+
+            const seaccountInfo = await connection.getParsedAccountInfo(singularityEnergyAccountPublicKey);
+            console.log("Got Vault GPT account info.");
+            if (!seaccountInfo || !seaccountInfo.value) {
+                console.error("Vault GPT account doesn't exist. Cannot provision.");
+                alert("Vault GPT account doesn't exist. Cannot provision.");
+                return;
+            }
+
+            // Prepare provision transaction
+            const accounts = [
+                { pubkey: metabolizerPublicKey, isSigner: false, isWritable: true },
+                { pubkey: metabolizerEnergyAccountPublicKey, isSigner: false, isWritable: true },
+                { pubkey: singularityEnergyAccountPublicKey, isSigner: false, isWritable: true },
+                { pubkey: publicKey, isSigner: true, isWritable: true },
+                { pubkey: TOKEN_PROGRAM_ID, isSigner: false, isWritable: false },
+            ];
+            console.log("Provision Accounts: ", accounts);
+
+            const provisionEnergyDiscriminator = await computeInstructionDiscriminator("provision");
+            console.log("8-byte provision discriminator:", provisionEnergyDiscriminator);
+            const nU64 = encodeU64(n_provision * 1e6); // Assuming 6 decimals for the token
+            console.log("nU64: ", nU64);
+            const provisionEnergyData = new Uint8Array([...provisionEnergyDiscriminator, ...nU64]);
+
+            const instruction = new solanaWeb3.TransactionInstruction({
+                keys: accounts,
+                programId: programId,
+                data: provisionEnergyData,
+            });
+            tx.add(instruction);
+
+            console.log("Getting latest blockhash for provision...");
+            const latest = await connection.getLatestBlockhash();
+            console.log("Latest blockhash: ", latest);
+            tx.recentBlockhash = latest.blockhash;
+            tx.lastValidBlockHeight = latest.lastValidBlockHeight;
+            tx.feePayer = provider.publicKey;
+            console.log("Provision Transaction: ", tx);
+
+            try {
+                console.log("Sending provision transaction...");
+                const signature = await provider.signAndSendTransaction(tx, { skipPreflight: false });
+                console.log(`Provision: Transaction sent with signature: ${JSON.stringify(signature)}`);
+                // alert("Energy provisioned successfully!");
+            } catch (error) {
+                console.error("Error sending provision transaction: ", error);
+                alert("Error sending provision transaction: " + error.message);
+            }
+        } else {
+             // This case should ideally not be reached if creation failed and returned earlier
+            console.error("Demander account check failed, cannot provision GPT.");
+        }
+
+    } catch (error) {
+        console.error("Error in checking demander account and provisionign GPT: ", error);
+        alert("An error occurred: " + error.message);
+    }
 }
 
 function sendMessage() {    
@@ -694,9 +695,30 @@ function sendMessage() {
             console.error("Please enter a message to send.");
             return;
         // } else if (message.startsWith('/') || message.startsWith('>') || message.startsWith('@') || message.startsWith('#') || message.startsWith('%') || message.startsWith('?') || message.startsWith('!')) {
-        } else if (message.startsWith('/help') || message.startsWith('/welcome'))  {
-            console.log("Special command detected: ", message);
-            return;
+        } else if (message.startsWith('/')) {
+            const commands = ['/help', '/welcome', '/aide', '/contact', '/bienvenue']; // Add your commands here
+            const command = commands.find(cmd => message.startsWith(cmd));
+            if (command) {
+                console.log("Special command detected: ", command);
+                return;
+            } else {
+                console.log("Message: ", message);
+                const energy_address = document.querySelector("#energy-address > label > div > textarea").value;
+                if (energy_address) {
+                    if (energy_address === '1e') {
+                        // alert("Please connect your wallet to send messages.");
+                        console.error('Please connect your wallet to send messages.')
+                    } else {
+                        // alert("Sending message");
+                        console.log("Preparing to send your message...")
+            
+                        // Make sure the metabolizer account exists
+                        checkMetabolizerAndProvisionEnergy();
+                    }
+                } else {
+                    console.error("Please connect your wallet.");
+                }
+            }
         } else {
             console.log("Message: ", message);
             const energy_address = document.querySelector("#energy-address > label > div > textarea").value;
@@ -818,9 +840,9 @@ async function purchase(amountGPT, amountSOL, customerAddress, gptAddress) {
     //     resolve(signature);
     // }
     // );
-    solIcoAddress = document.querySelector("#sol-ico-address > label > div > textarea").value;
-    console.log("SOL ICO Address: ", solIcoAddress);
-    const trxSigID = await transfer(solIcoAddress, amountSOL);
+    vaultOwnerAddress = document.querySelector("#vault-owner > label > div > textarea").value;
+    console.log("Vault Owner Address: ", vaultOwnerAddress);
+    const trxSigID = await transfer(vaultOwnerAddress, amountSOL);
     // set the transaction-signature field value with trxSigID
     const trxSigField = document.querySelector("#transaction-signature > label > div > textarea");
     trxSigField.value = trxSigID['signature'];
