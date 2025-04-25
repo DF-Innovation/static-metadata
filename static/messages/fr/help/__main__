@@ -5,11 +5,10 @@ Obtenez de l'aide sur un sujet en saisissant `/aide <sujet>` dans le chat. Voici
 - `command` : obtenez de l'aide sur l'utilisation des commandes.
 - `/aide expliquer`
 - `/aide contact`
-- `concept` : obtenez de l'aide sur un concept.
-- `/aide énergie`
-- `/help acheter de l'énergie`
-- `/aide gagner de l'énergie`
-- `/aide vendre de l'énergie`
-- `/aide envoyer un message`
+- `/aide GPT`
+- `/aide acheter GPT`
+- `/aide gagner GPT`
+- `/aide vendre GPT`
+- `/aide envoyer message`
 
 Si vous avez encore des questions, vous pouvez les poser dans le chat en utilisant le pseudo _*@support*_ et notre agent d'assistance fera de son mieux pour vous aider.
