@@ -416,6 +416,7 @@ en:
   SOL ICO Account Address: SOL ICO Account Address
   Toggle display: Toggle display
   About: About
+  Welcome: Welcome
 fr:
   Setting this will set it as the active tab.: Définir cet onglet comme actif.
   Active tab: Onglet actif
@@ -837,3 +838,4 @@ fr:
   SOL ICO Account Address: Adresse du compte ICO SOL
   Toggle display: Afficher/masquer
   About: À propos
+  Welcome: Bienvenue
