@@ -384,6 +384,10 @@ en:
     token here.
   Using Serverless Inference API: Using Serverless Inference API
   Use HuggingFace 🤗: Use HuggingFace 🤗
+  Enter your Google Gemini API access token here.: Enter your Google Gemini API access
+    token here.
+  Using Gemini API: Using Gemini API
+  Use Google: Use Google
   Select which model(s) we can infere from using the below access key.: Select which
     model(s) we can infere from using the below access key.
   Enter your OpenAI API key here.: Enter your OpenAI API key here.
@@ -412,15 +416,7 @@ en:
   SOL ICO Account Address: SOL ICO Account Address
   Toggle display: Toggle display
   About: About
-  Please conntect your wallet first.: Please conntect your wallet first.
-  ? 'Transaction aborted: Amount of GPT or SOL is negative.'
-  : 'Transaction aborted: Amount of GPT or SOL is negative.'
-  ? 'Transaction aborted: No transaction ID provided.'
-  : 'Transaction aborted: No transaction ID provided.'
-  ? 'Transaction successful! Thank you for your purchase.'
-  : 'Transaction successful! Thank you for your purchase.'
-  Purchasing: Purchasing
-  for: for
+  Welcome: Welcome
 fr:
   Setting this will set it as the active tab.: Définir cet onglet comme actif.
   Active tab: Onglet actif
@@ -493,7 +489,7 @@ fr:
   Account: Compte
   This is the address of the account where we register your GPT provision.: C'est
     l'adresse du compte où nous enregistrons votre provision GPT.
-  Demander Address: Adresse Demander
+  Demander Address: Adresse demandeur
   Select the model that will generate the response.: Sélectionnez le modèle qui générera
     la réponse.
   Model: Modèle
@@ -632,7 +628,7 @@ fr:
   Provision: Provision
   ? When you send a message, you must provision your Demander account with GPT upto
     the maximum context window size of the model(s) used for the transaction.
-  : Lorsque vous envoyez un message, vous devez provisionner votre compte Demander
+  : Lorsque vous envoyez un message, vous devez provisionner votre compte demandeur
     avec GPT jusqu'à la taille maximale de la fenêtre de contexte du ou des modèles
     utilisés pour la transaction.
   Deposit GPT provision to the Vault: Déposer la provision GPT dans le coffre
@@ -649,9 +645,9 @@ fr:
   : "\n  demander_account.transfer(\n    authority = demander_signer,\n    to = vault_account,\n\
     \    amount = u64(n)\n  )\n  demander.reserve += n\n```\n\n<details>\n\n<summary>"
   First message you send, we will ask you to open a Demander account to proceed with provisioning.: Le
-    premier message que vous envoyez, nous vous demanderons d'ouvrir un compte Demander
+    premier message que vous envoyez, nous vous demanderons d'ouvrir un compte demandeur
     pour procéder à la provision.
-  Initialize a Demander: Initialiser un Demander
+  Initialize a Demander: Initialiser un demandeur
   ? "\n@instruction\ndef demand(\n    signer: Signer,\n    demander: Empty[Demander],\n\
     \  ):\n  demander = demander.init(\n    payer = signer,\n    seeds = ['demander',\
     \ signer]\n  )\n  demander.owner = signer.key()\n  demander.last_exchange = 0\n\
@@ -677,7 +673,7 @@ fr:
     <summary>'
   ? With your Demander account provisioned, we can now consume your provision on your
     behalf to generate the tokens to answer your query.
-  : Avec votre compte Demander provisionné, nous pouvons maintenant consommer votre
+  : Avec votre compte demandeur provisionné, nous pouvons maintenant consommer votre
     provision en votre nom pour générer les jetons nécessaires à la réponse à votre
     requête.
   ? '</summary>
@@ -808,6 +804,10 @@ fr:
     HuggingFace 🤗 ici.
   Using Serverless Inference API: Using Serverless Inference API
   Use HuggingFace 🤗: Utiliser HuggingFace 🤗
+  Enter your Google Gemini API access token here.: Enter your Google Gemini API access
+    token here.
+  Using Gemini API: Using Gemini API
+  Use Google: Use Google
   Select which model(s) we can infere from using the below access key.: Sélectionnez
     le(s) modèle(s) à partir desquels nous pouvons inférer en utilisant la clé d'accès
     ci-dessous.
@@ -838,12 +838,4 @@ fr:
   SOL ICO Account Address: Adresse du compte ICO SOL
   Toggle display: Afficher/masquer
   About: À propos
-  Please conntect your wallet first.: Veuillez d'abord connecter votre wallet.
-  ? 'Transaction aborted: Amount of GPT or SOL is negative.'
-  : 'Transaction annulée : Montant de GPT ou SOL négatif.'
-  ? 'Transaction aborted: No transaction ID provided.'
-  : 'Transaction annulée : Aucun ID de transaction fourni.'
-  ? 'Transaction successful! Thank you for your purchase.'
-  : 'Transaction réussie ! Merci pour votre achat.'
-  Purchasing: Achat de 
-  for: pour
+  Welcome: Bienvenue
