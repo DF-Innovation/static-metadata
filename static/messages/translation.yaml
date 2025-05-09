@@ -60,6 +60,11 @@ en:
     build up the liquidity supply pool, we are offering a limited amount of GPT for
     sale.
   '### ': '### '
+  This is the address of your USDC account.: This is the address of your USDC account.
+  USDC Address: USDC Address
+  This is the amount of USDC in your account.: This is the amount of USDC in your
+    account.
+  ' (USDC)': ' (USDC)'
   Buy GPT: Buy GPT
   The price is `10 GPT = 1 SOL`.: The price is `10 GPT = 1 SOL`.
   This is the amount of GPT you want to buy.: This is the amount of GPT you want to
@@ -416,7 +421,6 @@ en:
   SOL ICO Account Address: SOL ICO Account Address
   Toggle display: Toggle display
   About: About
-  Welcome: Welcome
 fr:
   Setting this will set it as the active tab.: Définir cet onglet comme actif.
   Active tab: Onglet actif
@@ -473,6 +477,11 @@ fr:
     constituer le pool d'approvisionnement en liquidité, nous proposons une quantité
     limitée de GPT à la vente.
   '### ': '### '
+  This is the address of your USDC account.: This is the address of your USDC account.
+  USDC Address: USDC Address
+  This is the amount of USDC in your account.: This is the amount of USDC in your
+    account.
+  ' (USDC)': ' (USDC)'
   Buy GPT: Acheter du GPT
   The price is `10 GPT = 1 SOL`.: Le prix est `10 GPT = 1 SOL`.
   This is the amount of GPT you want to buy.: C'est le montant de GPT que vous souhaitez
@@ -838,4 +847,3 @@ fr:
   SOL ICO Account Address: Adresse du compte ICO SOL
   Toggle display: Afficher/masquer
   About: À propos
-  Welcome: Bienvenue
